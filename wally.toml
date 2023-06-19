@@ -1,0 +1,15 @@
+[package]
+name = "team-snowdust/feature-flags"
+version = "0.1.0"
+description = "A feature flags library"
+license = "MIT"
+authors = ["Lucas Gangstad <lucas@lasttalon.dev>"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+exclude = ["*.spec.lua", "*.dev.lua", "tests", "docs"]
+
+[dependencies]
+Promise = "evaera/promise@4.0.0"
+
+[dev-dependencies]
+TestEZ = "roblox/testez@0.4.1"

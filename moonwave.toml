@@ -1,0 +1,11 @@
+gitSourceBranch = "main"
+
+[docusaurus]
+title = "Feature Flags"
+tagline = "A feature flags library"
+
+[home]
+enabled = true
+
+[footer]
+copyright = "Copyright © 2023 Snowdust LLC. Built with Moonwave and Docusaurus"
