@@ -1,21 +1,26 @@
+local Flags = require(script.Flags)
+local get = require(script.get)
+local isActive = require(script.isActive)
+
 --[=[
 	@class FeatureFlags
 ]=]
 
 return {
-	-- create = create,
-	-- read = read,
-	-- update = update,
-	-- retire = retire,
-	-- destroy = destroy,
+	create = Flags.create,
+	exists = Flags.exists,
+	read = Flags.read,
+	update = Flags.update,
+	retire = Flags.retire,
+	destroy = Flags.destroy,
+	reset = Flags.reset,
 
-	-- get = get,
-	-- onChange = onChange,
-	-- isActive = isActive,
+	get = get,
+	Changed = Flags.Changed.Event,
+	isActive = isActive,
 
 	-- init = init,
 	-- config = config,
-	-- reset = reset,
 
 	-- getAllFlags = getAllFlags,
 	-- getAuditLog = getAuditLog,
