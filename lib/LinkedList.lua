@@ -20,7 +20,7 @@ local LinkedList = {}
 LinkedList.__index = LinkedList
 
 LinkedList.__iter = function(list: typeof(LinkedList.new())): <T>() -> (T, Entry<T>)
-	return list:iterate()
+	return list:Iterate()
 end
 
 function LinkedList.new()
