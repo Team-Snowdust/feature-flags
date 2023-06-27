@@ -1,11 +1,17 @@
 local Package = script.Parent
 local LinkedList = require(Package.LinkedList)
 
+--[=[
+	@class Connection
+]=]
 export type Connection = {
 	disconnect: () -> (),
 	isConnected: () -> boolean,
 }
 
+--[=[
+	@within Event
+]=]
 export type Callback = (...unknown) -> ()
 
 type Listener = {
@@ -17,17 +23,25 @@ local Signal = {}
 Signal.__index = Signal
 
 function Signal.new()
-	local self = setmetatable({}, Signal)
-	self.Event = setmetatable({}, {
-		__index = {
-			Connect = function(_, callback)
-				return self:Connect(callback)
-			end,
-		},
-	})
-	self.listeners = LinkedList.new()
+	local signal = setmetatable({}, Signal)
 
-	return self
+	--[=[
+		@class Event
+	]=]
+	local Event = {}
+	Event.__index = Event
+
+	--[=[
+		@within Event
+	]=]
+	function Event:Connect(callback: Callback): Connection
+		return signal:Connect(callback)
+	end
+
+	signal.Event = setmetatable({}, Event)
+	signal.listeners = LinkedList.new()
+
+	return signal
 end
 
 function Signal:Connect(callback: Callback): Connection
