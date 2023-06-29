@@ -1,4 +1,5 @@
 gitSourceBranch = "main"
+classOrder = ["FeatureFlags"]
 
 [docusaurus]
 title = "Feature Flags"

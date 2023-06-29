@@ -2,6 +2,16 @@ local Package = script.Parent
 local Signal = require(Package.Signal)
 
 --[=[
+	.activation ((context: { [unknown]: unknown }?, ruleSet: { [unknown]: unknown }?) -> boolean)?
+	.allowedUsers { [number]: true }?
+	.forbiddenUsers { [number]: true }?
+	.allowedGroups { [string]: true }?
+	.forbiddenGroups { [string]: true }?
+	.allowedSystemStates { [string]: true }?
+	.forbiddenSystemStates { [string]: true }?
+	.abSegments { [string]: number }?
+
+	@interface RuleSet
 	@within FeatureFlags
 ]=]
 export type RuleSet = {
@@ -16,6 +26,10 @@ export type RuleSet = {
 }
 
 --[=[
+	.active boolean
+	.ruleSets { RuleSet }?
+
+	@interface FlagConfig
 	@within FeatureFlags
 ]=]
 export type FlagConfig = {
@@ -24,6 +38,10 @@ export type FlagConfig = {
 } & RuleSet
 
 --[=[
+	.config FlagConfig
+	.retired boolean
+
+	@interface FlagData
 	@within FeatureFlags
 ]=]
 export type FlagData = {
@@ -32,6 +50,10 @@ export type FlagData = {
 }
 
 --[=[
+	.old FlagData?
+	.new FlagData?
+
+	@interface ChangeRecord
 	@within FeatureFlags
 ]=]
 export type ChangeRecord = {
@@ -40,12 +62,19 @@ export type ChangeRecord = {
 }
 
 --[=[
+	@class Flags
+	@ignore
+]=]
+
+--[=[
+	@prop Changed Event
 	@within FeatureFlags
 ]=]
 local Changed = Signal.new()
 local flags: { [string]: FlagData } = {}
 
 --[=[
+	@within Flags
 	@ignore
 ]=]
 local function fireChange(name: string, old: FlagData?, new: FlagData?)
@@ -57,6 +86,7 @@ local function fireChange(name: string, old: FlagData?, new: FlagData?)
 end
 
 --[=[
+	@within Flags
 	@ignore
 ]=]
 local function newFlag(config: FlagConfig, retired: boolean?): FlagData
@@ -74,6 +104,7 @@ type PartialFlag = {
 }
 
 --[=[
+	@within Flags
 	@ignore
 ]=]
 local function updateFlag(flag: FlagData, update: PartialFlag): FlagData

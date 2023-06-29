@@ -2,14 +2,33 @@ local Package = script.Parent
 local LinkedList = require(Package.LinkedList)
 
 --[=[
+	A connection created by an [Event].
+
 	@class Connection
 ]=]
+
+--[=[
+	Disconnects this connection.
+
+	@function disconnect
+	@within Connection
+]=]
+
+--[=[
+	Checks if this function is currently connected.
+
+	@function isConnected
+	@within Connection
+	@return boolean
+]=]
+
 export type Connection = {
 	disconnect: () -> (),
 	isConnected: () -> boolean,
 }
 
 --[=[
+	@type Callback (...unknown) -> ()
 	@within Event
 ]=]
 export type Callback = (...unknown) -> ()

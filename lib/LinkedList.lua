@@ -1,3 +1,10 @@
+--[=[
+	.remove () -> ()
+
+	@interface Entry<T>
+	@within LinkedList
+	@ignore
+]=]
 export type Entry<T> = {
 	remove: () -> (),
 }
@@ -16,6 +23,10 @@ type Node<T> = {
 	prev: UnknownNode?,
 }
 
+--[=[
+	@class LinkedList
+	@ignore
+]=]
 local LinkedList = {}
 LinkedList.__index = LinkedList
 
@@ -23,11 +34,19 @@ LinkedList.__iter = function(list: typeof(LinkedList.new())): <T>() -> (T, Entry
 	return list:Iterate()
 end
 
+--[=[
+	@within LinkedList
+	@ignore
+]=]
 function LinkedList.new()
 	local self = setmetatable({}, LinkedList)
 	return self
 end
 
+--[=[
+	@within LinkedList
+	@ignore
+]=]
 function LinkedList:Push<T>(value: T): Entry<T>
 	local node: Node<T>?
 	local entry = {
@@ -68,6 +87,10 @@ function LinkedList:Push<T>(value: T): Entry<T>
 	return entry
 end
 
+--[=[
+	@within LinkedList
+	@ignore
+]=]
 function LinkedList:Shift(): unknown
 	local node = self.front
 	if node then
@@ -77,6 +100,10 @@ function LinkedList:Shift(): unknown
 	return
 end
 
+--[=[
+	@within LinkedList
+	@ignore
+]=]
 function LinkedList:Pop(): unknown
 	local node = self.back
 	if node then
@@ -86,6 +113,10 @@ function LinkedList:Pop(): unknown
 	return
 end
 
+--[=[
+	@within LinkedList
+	@ignore
+]=]
 function LinkedList:Iterate(): <T>() -> (T, Entry<T>)
 	local node: UnknownNode? = self.front
 

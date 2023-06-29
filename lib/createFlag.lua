@@ -18,6 +18,7 @@ export type Flag = {
 }
 
 --[=[
+	@within Flag
 	@ignore
 ]=]
 local function createFlag(name: string): Flag

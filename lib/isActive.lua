@@ -12,6 +12,12 @@ local AB_TESTING_PRIME = 1361
 --[=[
 	The activation context.
 
+	.userId number?
+	.groups { [string]: true }?
+	.systemStates { [string]: true }?
+	.abSegments { [string]: true }?
+
+	@interface ActivationContext
 	@within FeatureFlags
 ]=]
 export type ActivationContext = {
@@ -24,6 +30,12 @@ export type ActivationContext = {
 --[=[
 	The activation configuration.
 
+	.default boolean?
+	.allowRetire boolean?
+	.warnExists boolean?
+	.warnRetire boolean?
+
+	@interface ActivationConfig
 	@within FeatureFlags
 ]=]
 export type ActivationConfig = {
@@ -32,6 +44,11 @@ export type ActivationConfig = {
 	warnExists: boolean?,
 	warnRetire: boolean?,
 }
+
+--[=[
+	@class isActive
+	@ignore
+]=]
 
 type NormalizedContext = {
 	userId: number?,
@@ -44,6 +61,7 @@ type NormalizedContext = {
 
 	This ensures that all optional properties that can have defaults have a value.
 
+	@within isActive
 	@ignore
 ]=]
 local function normalizeContext(context: ActivationContext?): NormalizedContext
@@ -67,6 +85,7 @@ type NormalizedConfig = {
 
 	This ensures that all optional properties that can have defaults have a value.
 
+	@within isActive
 	@ignore
 ]=]
 local function normalizeConfig(config: ActivationConfig?): NormalizedConfig
@@ -82,6 +101,7 @@ end
 --[=[
 	Determines if two sets share any elements.
 
+	@within isActive
 	@ignore
 ]=]
 local function hasIntersection<T>(left: { [T]: true }, right: { [T]: true }): boolean
@@ -96,6 +116,7 @@ end
 --[=[
 	Hash a string into a number.
 
+	@within isActive
 	@ignore
 ]=]
 local function hashCode(string: string): number
@@ -114,6 +135,7 @@ end
 	match within a RuleSet and these are ignored when determining if this RuleSet
 	passes.
 
+	@within isActive
 	@ignore
 ]=]
 local function evaluateRuleSet(context: ActivationContext, ruleSet: Flags.RuleSet): boolean?
