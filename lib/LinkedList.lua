@@ -1,4 +1,8 @@
 --[=[
+	An entry in a LinkedList.
+
+	Allows removing this entry from the list. This is a constant time operation.
+
 	.remove () -> ()
 
 	@interface Entry<T>
@@ -24,6 +28,13 @@ type Node<T> = {
 }
 
 --[=[
+	A doubly-linked list.
+
+	Easily inserts and deletes arbitrarily without reordering. A reference to the
+	entry to insert or delete at is required. A reference to the front and back of
+	the list always exist. When inserting new entries, entry references are
+	provided for convenient removal.
+
 	@class LinkedList
 	@ignore
 ]=]
@@ -31,6 +42,8 @@ local LinkedList = {}
 LinkedList.__index = LinkedList
 
 --[=[
+	Creates a new LinkedList.
+
 	@within LinkedList
 	@ignore
 ]=]
@@ -40,6 +53,8 @@ function LinkedList.new()
 end
 
 --[=[
+	Pushes a new entry to the back of the List.
+
 	@within LinkedList
 	@ignore
 ]=]
@@ -84,6 +99,8 @@ function LinkedList:Push<T>(value: T): Entry<T>
 end
 
 --[=[
+	Shifts an entry off of the front of the List.
+
 	@within LinkedList
 	@ignore
 ]=]
@@ -97,6 +114,8 @@ function LinkedList:Shift(): unknown
 end
 
 --[=[
+	Pops an entry off of the back of the List.
+
 	@within LinkedList
 	@ignore
 ]=]
@@ -110,6 +129,11 @@ function LinkedList:Pop(): unknown
 end
 
 --[=[
+	Iterates over all entries in this List.
+
+	Iteration returns the value stored in each entry, followed by an [Entry]
+	object which can be used to manipulate this entry in the List.
+
 	@within LinkedList
 	@ignore
 ]=]
@@ -124,9 +148,6 @@ function LinkedList:__iter(): <T>() -> (T, Entry<T>)
 		local currentNode = node
 		node = node.next
 		return currentNode.value, currentNode.entry
-		end
-
-		return
 	end
 end
 
