@@ -30,10 +30,6 @@ type Node<T> = {
 local LinkedList = {}
 LinkedList.__index = LinkedList
 
-LinkedList.__iter = function(list: typeof(LinkedList.new())): <T>() -> (T, Entry<T>)
-	return list:Iterate()
-end
-
 --[=[
 	@within LinkedList
 	@ignore
@@ -117,14 +113,17 @@ end
 	@within LinkedList
 	@ignore
 ]=]
-function LinkedList:Iterate(): <T>() -> (T, Entry<T>)
+function LinkedList:__iter(): <T>() -> (T, Entry<T>)
 	local node: UnknownNode? = self.front
 
 	return function()
-		while node do
-			local currentNode = node
-			node = node.next
-			return currentNode.value, currentNode.entry
+		if not node then
+			return
+		end
+
+		local currentNode = node
+		node = node.next
+		return currentNode.value, currentNode.entry
 		end
 
 		return
