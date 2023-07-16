@@ -26,7 +26,7 @@ To use Feature Flags in your project, simply require the module and access the
 hooks you want to use. For example, to use the `?` ?:
 
 ```lua
-local FeatureFlags = require(ReplicatedStorage.Packages.MatterHooks)
+local FeatureFlags = require(ReplicatedStorage.Packages.FeatureFlags)
 
 
 ```
