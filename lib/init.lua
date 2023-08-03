@@ -6,6 +6,13 @@ local isActive = require(script.isActive)
 	@class FeatureFlags
 ]=]
 
+export type ActivationConfig = isActive.ActivationConfig
+export type ActivationContext = isActive.ActivationContext
+export type ChangeRecord = Flags.ChangeRecord
+export type FlagConfig = Flags.FlagConfig
+export type FlagData = Flags.FlagData
+export type RuleSet = Flags.RuleSet
+
 return {
 	create = Flags.create,
 	exists = Flags.exists,
@@ -16,8 +23,9 @@ return {
 	reset = Flags.reset,
 
 	get = get,
-	Changed = Flags.Changed.Event,
 	isActive = isActive,
+
+	Changed = Flags.Changed.Event,
 
 	-- init = init,
 	-- config = config,
