@@ -264,6 +264,8 @@ local function isActive(
 		elseif not notified then
 			error(string.format(FLAG_EXISTS_ERROR, name))
 		end
+
+		return false
 	end
 
 	local flag = Flags.read(name)
