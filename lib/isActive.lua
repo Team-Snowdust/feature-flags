@@ -50,12 +50,6 @@ export type ActivationConfig = {
 	@ignore
 ]=]
 
-type NormalizedContext = {
-	userId: number?,
-	groups: { [string]: true },
-	systemStates: { [string]: true },
-}
-
 --[=[
 	Normalize the context provided.
 
@@ -64,13 +58,9 @@ type NormalizedContext = {
 	@within isActive
 	@ignore
 ]=]
-local function normalizeContext(context: ActivationContext?): NormalizedContext
+local function normalizeContext(context: ActivationContext?): ActivationContext
 	-- TODO: Merge global context in
-	return {
-		userId = if context and context.userId then context.userId else nil,
-		groups = if context and context.groups then context.groups else {},
-		systemStates = if context and context.systemStates then context.systemStates else {},
-	}
+	return context or {}
 end
 
 type NormalizedConfig = {
