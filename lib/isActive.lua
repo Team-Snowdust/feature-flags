@@ -10,12 +10,34 @@ local FLAG_RETIRED_ERROR = "Flag '%s' is retired."
 local AB_TESTING_PRIME = 1361
 
 --[=[
-	The activation context.
+	The ActivationContext for a feature' activation.
 
-	.userId number?
-	.groups { [string]: true }?
-	.systemStates { [string]: true }?
-	.abSegments { [string]: true }?
+	Represents user ID, groups, system states, and AB segments that inform feature
+	activation. These parameters allow features to operate under different rules
+	based on their specific context.
+
+	For instance, features may activate for specific user groups, AB segments, or
+	under certain system states.
+
+	Default behavior is applied if a context parameter is not provided.
+
+	```lua
+	local userContext = {
+		userId = 12345, -- Replace with actual user ID
+		groups = { betaTesters = true }, -- User is in the 'betaTesters' group
+		systemStates = { lowLoad = true }, -- System is currently under low load
+		abSegments = { testA = true }, -- User is in the 'testA' AB segment
+	}
+
+	if isActive("ourFeature", userContext) then
+		-- Our feature is active for this particular context
+	end
+	```
+
+	.userId number? -- The ID of the user
+	.groups { [string]: true }? -- A set of groups
+	.systemStates { [string]: true }? -- A set of system states
+	.abSegments { [string]: true }? -- A set of AB segments
 
 	@interface ActivationContext
 	@within FeatureFlags
@@ -28,12 +50,30 @@ export type ActivationContext = {
 }
 
 --[=[
-	The activation configuration.
+	The configuration parameters for a feature's activation.
 
-	.default boolean?
-	.allowRetire boolean?
-	.warnExists boolean?
-	.warnRetire boolean?
+	This determines the default state and warning behavior of a feature. This can
+	assist with development of features behind flags, such as throwing errors when
+	flags are being used that are no longer meant to be used.
+
+	```lua
+	if
+		isActive("newUI", userContext, {
+			default = true, -- Assume the feature is active if not found (do not notify)
+			allowRetire = false, -- Notify if the flag has been retired
+			warnRetire = false, -- Error if the flag is retired
+		})
+	then
+		-- Load the new user interface
+	else
+		-- Load the old user interface
+	end
+	```
+
+	.default boolean? -- Default activation status if the feature doesn't exist
+	.allowRetire boolean? -- Flag to allow retirement of the feature; if not set and the flag is retired, this notifies in the console
+	.warnExists boolean? -- Flag to warn rather than error when a feature doesn't exist
+	.warnRetire boolean? -- Flag to warn rather than error when a feature is retired
 
 	@interface ActivationConfig
 	@within FeatureFlags
@@ -46,6 +86,8 @@ export type ActivationConfig = {
 }
 
 --[=[
+	The isActive auxiliary functions.
+
 	@class isActive
 	@ignore
 ]=]
@@ -56,13 +98,23 @@ export type ActivationConfig = {
 	This ensures that all optional properties that can have defaults have a value.
 
 	@within isActive
-	@ignore
 ]=]
 local function normalizeContext(context: ActivationContext?): ActivationContext
 	-- TODO: Merge global context in
 	return context or {}
 end
 
+--[=[
+	A normalized ActivationContext.
+
+	.default?: boolean
+	.allowRetire: boolean
+	.warnExists: boolean
+	.warnRetire: boolean
+
+	@interface ActivationContext
+	@within isActive
+]=]
 type NormalizedConfig = {
 	default: boolean?,
 	allowRetire: boolean,
@@ -76,7 +128,6 @@ type NormalizedConfig = {
 	This ensures that all optional properties that can have defaults have a value.
 
 	@within isActive
-	@ignore
 ]=]
 local function normalizeConfig(config: ActivationConfig?): NormalizedConfig
 	-- TODO: Merge global config in
@@ -92,7 +143,6 @@ end
 	Determines if two sets share any elements.
 
 	@within isActive
-	@ignore
 ]=]
 local function hasIntersection<T>(left: { [T]: true }, right: { [T]: true }): boolean
 	for element in left do
@@ -107,7 +157,6 @@ end
 	Hash a string into a number.
 
 	@within isActive
-	@ignore
 ]=]
 local function hashCode(string: string): number
 	local result = 0
@@ -126,7 +175,6 @@ end
 	passes.
 
 	@within isActive
-	@ignore
 ]=]
 local function evaluateRuleSet(context: ActivationContext, ruleSet: Flags.RuleSet): boolean?
 	local matched = false
@@ -238,7 +286,97 @@ local function evaluateRuleSet(context: ActivationContext, ruleSet: Flags.RuleSe
 end
 
 --[=[
-	Determines if a flag should be active based on the provided context.
+	Checks if a feature flag is active based on provided context and
+	configuration.
+
+	The `isActive` function evaluates whether a feature should be active based on
+	the provided user context and configuration. It normalizes these inputs, using
+	default values for any missing context or configuration properties.
+
+	```lua
+	if isActive("uiUpdate", {
+		userId = 1000,
+		groups = { beta = true },
+		abSegments = { newInventory = true },
+	}) then
+		-- The user with this context should have this feature active.
+	end
+	```
+
+	The feature flag's existence and retirement status are then checked:
+
+	- If the feature doesn't exist, the behavior depends on the `warnExists` and
+	  `default` configuration properties.
+
+	  1. If `warnExists` is true, a warning is logged.
+	  2. If `default` is provided, the `default` value is returned.
+	  3. If neither a warning is logged nor a `default` value is provided, an
+	     error is thrown.
+	  4. If nothing else causes the function to terminate a default value of false
+	     is returned.
+
+	  ```lua
+	  if isActive("missingFlag", activationContext, {
+	  	default = true,
+	  	warnExists = true,
+	  }) then
+	  	-- If the flag no longer exists we still execute this code.
+	  	-- A warning is logged rather than an error.
+	  else
+	  	-- The flag exists, but is set to false.
+	  end
+	  ```
+
+	- If the feature is retired, the behavior depends on the `allowRetire` and
+	  `warnRetire` configuration properties.
+
+	  1. If `allowRetire` is false, an error is thrown.
+	  2. If `allowRetire` is true but `warnRetire` is true as well, a warning is
+	     logged.
+
+	  ```lua
+	  if isActive("oldFlag", activationContext, {
+	  	allowRetire = true,
+	  	warnRetire = true,
+	  }) then
+	  	-- A retired flag can still be checked, but a warning is logged.
+	  end
+	  ```
+
+	The flag's active status is then checked. If the flag isn't active, then false
+	is returned immediately.
+
+	:::info
+	An inactive flag indicates it should not be active for anyone or under any
+	circumstances. To activate a feature conditionally rule sets should be used.
+	:::
+
+	If the flag is active, each rule set in the feature flag's configuration is
+	evaluated using the provided context:
+
+	- If a rule set evaluates to true, the feature is active.
+	- If no rule set evaluates to true, but at least one rule set was evaluated
+	  (i.e., it matched the context even though it evaluated to false), the
+	  feature is not active.
+	- If no rule set matches the context (i.e., none of the rule sets were
+	  evaluated), this means that no rules apply to disable a feature for the
+	  provided context. The feature is considered active.
+
+		:::caution
+	  This is sometimes unintuitive for users unfamiliar with it.
+
+	  Consider the case where a rule set to activate a feature for a specific user
+	  ID is configured but the feature is being activated without a user context,
+	  such as on the server. In such a case, the user restriction should not be
+	  considered matching and the feature should be considered active if no other
+	  rules apply.
+		:::
+
+	@param name -- The name of the feature flag to check
+	@param context -- The user context for this feature activation
+	@param config -- The configuration parameters for this feature activation
+
+	@return boolean -- Whether the feature should be active
 
 	@within FeatureFlags
 ]=]
