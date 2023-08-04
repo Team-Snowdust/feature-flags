@@ -2,12 +2,6 @@ local Package = script.Parent
 local LinkedList = require(Package.LinkedList)
 
 --[=[
-	A connection created by an [Event].
-
-	@class Connection
-]=]
-
---[=[
 	Disconnects this connection.
 
 	@function disconnect
@@ -22,6 +16,11 @@ local LinkedList = require(Package.LinkedList)
 	@return boolean
 ]=]
 
+--[=[
+	A connection created by an [Event].
+
+	@class Connection
+]=]
 export type Connection = {
 	disconnect: () -> (),
 	isConnected: () -> boolean,
