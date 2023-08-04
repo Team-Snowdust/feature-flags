@@ -373,8 +373,8 @@ end
 		:::
 
 	@param name -- The name of the feature flag to check
-	@param context -- The user context for this feature activation
-	@param config -- The configuration parameters for this feature activation
+	@param context? ActivationContext -- The user context for this feature activation
+	@param config? ActivationConfig -- The configuration parameters for this feature activation
 
 	@return boolean -- Whether the feature should be active
 
