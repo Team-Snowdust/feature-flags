@@ -7,7 +7,6 @@
 
 	@interface Entry<T>
 	@within LinkedList
-	@ignore
 ]=]
 export type Entry<T> = {
 	remove: () -> (),
@@ -45,7 +44,6 @@ LinkedList.__index = LinkedList
 	Creates a new LinkedList.
 
 	@within LinkedList
-	@ignore
 ]=]
 function LinkedList.new()
 	local self = setmetatable({}, LinkedList)
@@ -56,7 +54,6 @@ end
 	Pushes a new entry to the back of the List.
 
 	@within LinkedList
-	@ignore
 ]=]
 function LinkedList:Push<T>(value: T): Entry<T>
 	local node: Node<T>?
@@ -102,7 +99,6 @@ end
 	Shifts an entry off of the front of the List.
 
 	@within LinkedList
-	@ignore
 ]=]
 function LinkedList:Shift(): unknown
 	local node = self.front
@@ -117,7 +113,6 @@ end
 	Pops an entry off of the back of the List.
 
 	@within LinkedList
-	@ignore
 ]=]
 function LinkedList:Pop(): unknown
 	local node = self.back
@@ -135,7 +130,6 @@ end
 	object which can be used to manipulate this entry in the List.
 
 	@within LinkedList
-	@ignore
 ]=]
 function LinkedList:__iter(): <T>() -> (T, Entry<T>)
 	local node: UnknownNode? = self.front
