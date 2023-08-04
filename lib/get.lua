@@ -6,6 +6,21 @@ local Signal = require(script.Parent.Signal)
 local createFlag = require(Package.createFlag)
 
 --[=[
+	Gets a flag asynchronously.
+
+	```lua
+	get("newActivity"):andThen(function(flag: Flag)
+		-- The flag is available to use.
+		if flag.isActive() then
+			-- The flag is active.
+		end
+	end)
+	```
+
+	@param name -- The name of the flag
+
+	@return Promise<Flag> -- A Promise of the Flag requested
+
 	@within FeatureFlags
 ]=]
 local function get(name: string): PromiseTypes.Promise<createFlag.Flag>
