@@ -12,6 +12,7 @@ export type ChangeRecord = Flags.ChangeRecord
 export type FlagConfig = Flags.FlagConfig
 export type FlagData = Flags.FlagData
 export type RuleSet = Flags.RuleSet
+export type Flag = get.Flag
 
 return {
 	create = Flags.create,
@@ -22,10 +23,10 @@ return {
 	destroy = Flags.destroy,
 	reset = Flags.reset,
 
+	Changed = Flags.Changed.Event,
+
 	get = get,
 	isActive = isActive,
-
-	Changed = Flags.Changed.Event,
 
 	-- init = init,
 	-- config = config,

@@ -5,6 +5,8 @@ local PromiseTypes = require(Package.types.Promise)
 local Signal = require(script.Parent.Signal)
 local createFlag = require(Package.createFlag)
 
+export type Flag = createFlag.Flag
+
 --[=[
 	Gets a flag asynchronously.
 
@@ -23,7 +25,7 @@ local createFlag = require(Package.createFlag)
 
 	@within FeatureFlags
 ]=]
-local function get(name: string): PromiseTypes.Promise<createFlag.Flag>
+local function get(name: string): PromiseTypes.Promise<Flag>
 	return Promise.new(function(resolve: (createFlag.Flag) -> (), _, onCancel: (() -> ()) -> ())
 		if Flags.exists(name) then
 			resolve(createFlag(name))
