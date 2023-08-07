@@ -3,7 +3,7 @@
 
 # To add a new tool, add an entry to this table.
 [tools]
-rojo = "UpliftGames/rojo@7.2.2-uplift.release.4"
+rojo = "rojo-rbx/rojo@7.3.0"
 wally = "UpliftGames/wally@0.3.2"
-stylua = "JohnnyMorganz/StyLua@0.17.1"
+stylua = "JohnnyMorganz/StyLua@0.18.1"
 selene = "Kampfkarren/selene@0.25.0"
