@@ -2,7 +2,7 @@ local Package = script.Parent
 local Flags = require(Package.Flags)
 local Promise = require(Package.Parent.Promise)
 local PromiseTypes = require(Package.types.Promise)
-local Signal = require(script.Parent.Signal)
+local Signal = require(Package.Parent.Signal)
 local createFlag = require(Package.createFlag)
 
 export type Flag = createFlag.Flag

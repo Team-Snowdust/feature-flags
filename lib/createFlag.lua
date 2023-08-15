@@ -1,6 +1,6 @@
 local Package = script.Parent
 local Flags = require(Package.Flags)
-local Signal = require(script.Parent.Signal)
+local Signal = require(Package.Parent.Signal)
 local isActive = require(Package.isActive)
 
 --[=[

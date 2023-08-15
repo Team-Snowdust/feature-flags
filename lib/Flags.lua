@@ -1,5 +1,5 @@
 local Package = script.Parent
-local Signal = require(Package.Signal)
+local Signal = require(Package.Parent.Signal)
 
 --[=[
 	A rule set to determine if a feature should be active for a given context.
