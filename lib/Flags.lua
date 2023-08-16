@@ -157,9 +157,7 @@ end
 ]=]
 local function newFlag(config: FlagConfig, retired: boolean?): FlagData
 	return table.freeze({
-		-- table.freeze seems to break this type. We need to reassert that this is,
-		-- in fact, still a FlagConfig.
-		config = table.freeze(config) :: FlagConfig,
+		config = config,
 		retired = if retired ~= nil then retired else false,
 	})
 end
