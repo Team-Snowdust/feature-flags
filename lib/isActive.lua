@@ -1,7 +1,7 @@
 local Package = script.Parent
 local Flags = require(Package.Flags)
 
-local FLAG_EXISTS_ERROR = "Flag '%s' does not exist."
+local FLAG_EXISTS_ERROR = "Flag '%s' doesn't exist."
 local FLAG_RETIRED_ERROR = "Flag '%s' is retired."
 
 -- Large prime number for hash calculation. This only realistically needs to be
@@ -424,7 +424,7 @@ local function isActive(
 		return false
 	end
 
-	local mainEvaluation = evaluateRuleSet(context, config)
+	local mainEvaluation = evaluateRuleSet(context, flagConfig)
 	if mainEvaluation ~= nil then
 		return mainEvaluation
 	end
