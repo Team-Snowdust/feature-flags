@@ -10,8 +10,8 @@ already provided. See [FeatureFlags] for more information about each function.">
 
 This provides convenience access to other library functions with this flag
 already provided. See [FeatureFlags] for more information about each function."><link data-rh="true" rel="canonical" href="https://Team-Snowdust.github.io/feature-flags/api/Flag"><link data-rh="true" rel="alternate" href="https://Team-Snowdust.github.io/feature-flags/api/Flag" hreflang="en"><link data-rh="true" rel="alternate" href="https://Team-Snowdust.github.io/feature-flags/api/Flag" hreflang="x-default"><link rel="stylesheet" href="/feature-flags/assets/css/styles.fdfd902f.css">
-<link rel="preload" href="/feature-flags/assets/js/runtime~main.9ee1ccf3.js" as="script">
-<link rel="preload" href="/feature-flags/assets/js/main.05365836.js" as="script">
+<link rel="preload" href="/feature-flags/assets/js/runtime~main.b80985af.js" as="script">
+<link rel="preload" href="/feature-flags/assets/js/main.9d390ad4.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -23,9 +23,7 @@ already provided. See [FeatureFlags] for more information about each function.">
 </p>
 </div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="name"><code style="text-decoration:none">name</code><a href="#name" class="hash-link" aria-label="Direct link to name" title="Direct link to name">​</a></h3><span class="badge_Ba2I" style="color:#e74c3c"><span class="badgeTooltip_cWXP">This item is read only and cannot be modified.</span><span class="badgeToolTipTail_H9D_"><svg xmlns="http://www.w3.org/2000/svg" height="300px" width="300px" fill="#e74c3c" x="0px" y="0px" viewBox="0 0 96 96"><path d="M70.354,15.662h-7.496H25.566c-3.282,0-5.19-0.776-5.728-1.169v-1.456c0.538-0.393,2.445-1.168,5.728-1.168h46.479V8H25.566  c-4.776,0-9.594,1.468-9.594,4.747v61.458C15.972,86.645,20.328,88,37.495,88h42.535V15.662H70.354z"></path></svg> <!-- -->Read Only</span></span><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L33"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.<!-- -->name<!-- -->:<!-- --> </code> <code class="blue_P4bS">string</code></div><div>
 <p>The name of this flag.</p>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create"><code style="text-decoration:none">create</code><a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L53"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">create</code><code>(</code><div class="inset_uKQm"><div><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#FlagConfig">FlagConfig</a></code><code>,</code></div><div><code>retired?<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
-<p>Whether this flag is retied</p>
-</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create"><code style="text-decoration:none">create</code><a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L52"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">create</code><code>(</code><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig</a></code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Creates a new flag with the provided configuration.</p>
 <div class="admonition admonition-caution alert alert--warning">
   <div class="admonition-heading">
@@ -42,28 +40,28 @@ already provided. See [FeatureFlags] for more information about each function.">
   </div>
 </div>
 <p>See: <a href="FeatureFlags#create">create</a></p>
-</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; already exists.&quot;</td><td>Thrown when a flag with this name already exists.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="exists"><code style="text-decoration:none">exists</code><a href="#exists" class="hash-link" aria-label="Direct link to exists" title="Direct link to exists">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L64"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">exists</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; already exists.&quot;</td><td>Thrown when a flag with this name already exists.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="exists"><code style="text-decoration:none">exists</code><a href="#exists" class="hash-link" aria-label="Direct link to exists" title="Direct link to exists">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L63"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">exists</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>Checks if this flag currently exists.</p>
 <p>See: <a href="FeatureFlags#exists">exists</a></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="read"><code style="text-decoration:none">read</code><a href="#read" class="hash-link" aria-label="Direct link to read" title="Direct link to read">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L75"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">read</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#FlagData">FlagData</a></code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="read"><code style="text-decoration:none">read</code><a href="#read" class="hash-link" aria-label="Direct link to read" title="Direct link to read">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L74"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">read</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#FlagConfig">FlagConfig</a></code></div><div>
 <p>Reads the data of this flag.</p>
 <p>See: <a href="FeatureFlags#read">read</a></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update"><code style="text-decoration:none">update</code><a href="#update" class="hash-link" aria-label="Direct link to update" title="Direct link to update">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L86"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">update</code><code>(</code><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#FlagConfig">FlagConfig</a></code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update"><code style="text-decoration:none">update</code><a href="#update" class="hash-link" aria-label="Direct link to update" title="Direct link to update">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L85"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">update</code><code>(</code><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig</a></code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Updates the configuration of this flag.</p>
 <p>See: <a href="FeatureFlags#update">update</a></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="retire"><code style="text-decoration:none">retire</code><a href="#retire" class="hash-link" aria-label="Direct link to retire" title="Direct link to retire">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L97"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">retire</code><code>(</code><code>retired?<!-- -->: </code><code class="blue_P4bS">boolean</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="retire"><code style="text-decoration:none">retire</code><a href="#retire" class="hash-link" aria-label="Direct link to retire" title="Direct link to retire">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L96"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">retire</code><code>(</code><code>retired?<!-- -->: </code><code class="blue_P4bS">boolean</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Sets the retired status of this flag.</p>
 <p>See: <a href="FeatureFlags#retire">retire</a></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="destroy"><code style="text-decoration:none">destroy</code><a href="#destroy" class="hash-link" aria-label="Direct link to destroy" title="Direct link to destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L106"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="destroy"><code style="text-decoration:none">destroy</code><a href="#destroy" class="hash-link" aria-label="Direct link to destroy" title="Direct link to destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L105"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Removes this flag entirely.</p>
 <p>See: <a href="FeatureFlags#destroy">destroy</a></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isActive"><code style="text-decoration:none">isActive</code><a href="#isActive" class="hash-link" aria-label="Direct link to isActive" title="Direct link to isActive">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L121"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">isActive</code><code>(</code><div class="inset_uKQm"><div><code>context?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ActivationContext">ActivationContext</a></code><code>,</code></div><div><code>config?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ActivationConfig">ActivationConfig</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isActive"><code style="text-decoration:none">isActive</code><a href="#isActive" class="hash-link" aria-label="Direct link to isActive" title="Direct link to isActive">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L120"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">isActive</code><code>(</code><div class="inset_uKQm"><div><code>context?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ActivationContext">ActivationContext</a></code><code>,</code></div><div><code>config?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ActivationConfig">ActivationConfig</a></code></div></div><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>
   Checks if a feature flag is active based on provided context and
   configuration.
 </p>
 <p>See: <a href="FeatureFlags#isActive">isActive</a></p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="onChange"><code style="text-decoration:none">onChange</code><a href="#onChange" class="hash-link" aria-label="Direct link to onChange" title="Direct link to onChange">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L136"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">onChange</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code>record<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ChangeRecord">ChangeRecord</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code>) → </code><code class="blue_P4bS">Connection</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="onChange"><code style="text-decoration:none">onChange</code><a href="#onChange" class="hash-link" aria-label="Direct link to onChange" title="Direct link to onChange">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/createFlag.lua#L135"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Flag<!-- -->.</code><code class="green_DgR4">onChange</code><code>(</code><code>callback<!-- -->: </code><code class="purple_ieR2">(</code><code>record<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ChangeRecord">ChangeRecord</a></code><code class="purple_ieR2">)</code><code class="purple_ieR2"> → </code><code class="purple_ieR2">(</code><code class="purple_ieR2">)</code><code>) → </code><code class="blue_P4bS">Connection</code></div><div>
 <p>Subscribe to the changed event for this flag.</p>
 <p>This callback is only invoked when this flag is changed.</p>
 <p>See: <a href="FeatureFlags#Changed">Changed</a></p>
@@ -76,12 +74,7 @@ already provided. See [FeatureFlags] for more information about each function.">
                 {
                     &quot;name&quot;: &quot;config&quot;,
                     &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;FlagConfig&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;retired?&quot;,
-                    &quot;desc&quot;: &quot;Whether this flag is retied&quot;,
-                    &quot;lua_type&quot;: &quot;boolean&quot;
+                    &quot;lua_type&quot;: &quot;PartialFlagConfig&quot;
                 }
             ],
             &quot;returns&quot;: [],
@@ -93,7 +86,7 @@ already provided. See [FeatureFlags] for more information about each function.">
                 }
             ],
             &quot;source&quot;: {
-                &quot;line&quot;: 53,
+                &quot;line&quot;: 52,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -109,7 +102,7 @@ already provided. See [FeatureFlags] for more information about each function.">
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 64,
+                &quot;line&quot;: 63,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -120,12 +113,12 @@ already provided. See [FeatureFlags] for more information about each function.">
             &quot;returns&quot;: [
                 {
                     &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;FlagData&quot;
+                    &quot;lua_type&quot;: &quot;FlagConfig&quot;
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 75,
+                &quot;line&quot;: 74,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -136,13 +129,13 @@ already provided. See [FeatureFlags] for more information about each function.">
                 {
                     &quot;name&quot;: &quot;config&quot;,
                     &quot;desc&quot;: &quot;&quot;,
-                    &quot;lua_type&quot;: &quot;FlagConfig&quot;
+                    &quot;lua_type&quot;: &quot;PartialFlagConfig&quot;
                 }
             ],
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 86,
+                &quot;line&quot;: 85,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -159,7 +152,7 @@ already provided. See [FeatureFlags] for more information about each function.">
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 97,
+                &quot;line&quot;: 96,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -170,7 +163,7 @@ already provided. See [FeatureFlags] for more information about each function.">
             &quot;returns&quot;: [],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 106,
+                &quot;line&quot;: 105,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -197,7 +190,7 @@ already provided. See [FeatureFlags] for more information about each function.">
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 121,
+                &quot;line&quot;: 120,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -219,7 +212,7 @@ already provided. See [FeatureFlags] for more information about each function.">
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 136,
+                &quot;line&quot;: 135,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         },
@@ -242,7 +235,7 @@ already provided. See [FeatureFlags] for more information about each function.">
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;ignore&quot;: true,
             &quot;source&quot;: {
-                &quot;line&quot;: 143,
+                &quot;line&quot;: 142,
                 &quot;path&quot;: &quot;lib/createFlag.lua&quot;
             }
         }
@@ -267,7 +260,7 @@ already provided. See [FeatureFlags] for more information about each function.">
         &quot;path&quot;: &quot;lib/createFlag.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#name" class="table-of-contents__link toc-highlight">name</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#create" class="table-of-contents__link toc-highlight">.create</a></li><li><a href="#destroy" class="table-of-contents__link toc-highlight">.destroy</a></li><li><a href="#exists" class="table-of-contents__link toc-highlight">.exists</a></li><li><a href="#isActive" class="table-of-contents__link toc-highlight">.isActive</a></li><li><a href="#onChange" class="table-of-contents__link toc-highlight">.onChange</a></li><li><a href="#read" class="table-of-contents__link toc-highlight">.read</a></li><li><a href="#retire" class="table-of-contents__link toc-highlight">.retire</a></li><li><a href="#update" class="table-of-contents__link toc-highlight">.update</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Snowdust LLC. Built with Moonwave and Docusaurus</div></div></div></footer></div>
-<script src="/feature-flags/assets/js/runtime~main.9ee1ccf3.js"></script>
-<script src="/feature-flags/assets/js/main.05365836.js"></script>
+<script src="/feature-flags/assets/js/runtime~main.b80985af.js"></script>
+<script src="/feature-flags/assets/js/main.9d390ad4.js"></script>
 </body>
 </html>
