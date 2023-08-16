@@ -60,11 +60,6 @@ export type RuleSet = {
 	context should have this feature active. See [isActive](#isActive) for a more
 	detailed explanation.
 
-	The configuration additionally includes all [RuleSet] properties and can be
-	used as a primary rule set. This rule set, when used this way, is guaranteed
-	to be evaluated first. This is useful if there is a common rule set that is
-	more important, is a hot path, or if there is only one rule set.
-
 	:::info
 	The active property controls whether this flag can be active for anyone. If
 	this is false, no one will have this feature active. If a flag should be
@@ -72,42 +67,49 @@ export type RuleSet = {
 	:::
 
 	.active boolean -- Whether the flag is active
-	.ruleSets? { RuleSet } -- Rule sets to evaluate for this configuration
+	.retired boolean -- Whether this flag is retired
+	.ruleSets { RuleSet } -- Rule sets to evaluate for this configuration
 
 	@interface FlagConfig
 	@within FeatureFlags
 ]=]
 export type FlagConfig = {
 	active: boolean,
-	ruleSets: { RuleSet }?,
-} & RuleSet
+	retired: boolean,
+	ruleSets: { RuleSet },
+}
 
 --[=[
-	All data associated with a flag.
+	A partial flag configuration.
 
-	.config FlagConfig -- The configuration for this flag
-	.retired boolean -- Whether this flag is retired
+	This is used to update a flag. Any properties that are nil will not be
+	updated.
 
-	@interface FlagData
+	.active? boolean -- Whether the flag is active
+	.retired? boolean -- Whether this flag is retired
+	.ruleSets? { RuleSet } -- Rule sets to evaluate for this configuration
+
+	@interface PartialFlagConfig
 	@within FeatureFlags
 ]=]
-export type FlagData = {
-	config: FlagConfig,
-	retired: boolean,
+export type PartialFlagConfig = {
+	active: boolean?,
+	retired: boolean?,
+	ruleSets: { RuleSet }?,
 }
 
 --[=[
 	A record of how a flag has changed.
 
-	.old? FlagData -- The old flag, or nil if the flag was just created
-	.new? FlagData -- The new flag, or nil if the flag no longer exists
+	.old? FlagConfig -- The old flag, or nil if the flag was just created
+	.new? FlagConfig -- The new flag, or nil if the flag no longer exists
 
 	@interface ChangeRecord
 	@within FeatureFlags
 ]=]
 export type ChangeRecord = {
-	old: FlagData?,
-	new: FlagData?,
+	old: FlagConfig?,
+	new: FlagConfig?,
 }
 
 --[=[
@@ -116,7 +118,7 @@ export type ChangeRecord = {
 	@class Flags
 	@ignore
 ]=]
-local flags: { [string]: FlagData } = {}
+local flags: { [string]: FlagConfig } = {}
 
 --[=[
 	The flag changed event.
@@ -142,7 +144,7 @@ local Changed = Signal.new()
 
 	@within Flags
 ]=]
-local function fireChange(name: string, old: FlagData?, new: FlagData?)
+local function fireChange(name: string, old: FlagConfig?, new: FlagConfig?)
 	local record: ChangeRecord = {
 		old = old,
 		new = new,
@@ -151,32 +153,31 @@ local function fireChange(name: string, old: FlagData?, new: FlagData?)
 end
 
 --[=[
-	Creates new FlagData.
-
-	@within Flags
-]=]
-local function newFlag(config: FlagConfig, retired: boolean?): FlagData
-	return table.freeze({
-		config = config,
-		retired = if retired ~= nil then retired else false,
-	})
-end
-
-type PartialFlag = {
-	config: FlagConfig?,
-	retired: boolean?,
-}
-
---[=[
 	Creates a new, updated flag from partial flag data.
 
 	@within Flags
 ]=]
-local function updateFlag(flag: FlagData, update: PartialFlag): FlagData
-	return newFlag(
-		if update.config then update.config else flag.config,
-		if update.retired ~= nil then update.retired else flag.retired
-	)
+local function updateConfig(flag: FlagConfig, update: PartialFlagConfig): FlagConfig
+	return {
+		active = if update.active ~= nil then update.active else flag.active,
+		retired = if update.retired ~= nil then update.retired else flag.retired,
+		ruleSets = if update.ruleSets then update.ruleSets else flag.ruleSets,
+	}
+end
+
+local DefaultConfig: FlagConfig = {
+	active = true,
+	retired = false,
+	ruleSets = {},
+}
+
+--[=[
+	Normalizes a partial flag configuration.
+
+	@within Flags
+]=]
+local function normalizeConfig(config: PartialFlagConfig?): FlagConfig
+	return updateConfig(DefaultConfig, config or {})
 end
 
 --[=[
@@ -196,18 +197,17 @@ end
 
 	@param name -- The name to use for the flag
 	@param config -- The configuration of this flag
-	@param retired? boolean -- Whether this flag is retied
 
 	@error "Flag '%s' already exists." -- Thrown when a flag with this name already exists.
 
 	@within FeatureFlags
 ]=]
-local function create(name: string, config: FlagConfig, retired: boolean?)
+local function create(name: string, config: PartialFlagConfig?)
 	if flags[name] then
 		error(string.format("Flag '%s' already exists.", name))
 	end
 
-	local flag = newFlag(config, retired)
+	local flag = normalizeConfig(config)
 	flags[name] = flag
 
 	fireChange(name, nil, flag)
@@ -239,7 +239,7 @@ end
 
 	@within FeatureFlags
 ]=]
-local function read(name: string): FlagData
+local function read(name: string): FlagConfig
 	local flag = flags[name]
 	if not flag then
 		error(string.format("Flag '%s' doesn't exist.", name))
@@ -254,9 +254,9 @@ end
 
 	@within FeatureFlags
 ]=]
-local function update(name: string, config: FlagConfig)
+local function update(name: string, config: PartialFlagConfig)
 	local oldFlag = read(name)
-	local newFlag = updateFlag(oldFlag, { config = config })
+	local newFlag = updateConfig(oldFlag, config)
 	flags[name] = newFlag
 
 	fireChange(name, oldFlag, newFlag)
@@ -277,7 +277,7 @@ end
 local function retire(name: string, retired: boolean?)
 	local retired = if retired ~= nil then retired else true
 	local oldFlag = read(name)
-	local newFlag = updateFlag(oldFlag, { retired = retired })
+	local newFlag = updateConfig(oldFlag, { retired = retired })
 	flags[name] = newFlag
 
 	fireChange(name, oldFlag, newFlag)

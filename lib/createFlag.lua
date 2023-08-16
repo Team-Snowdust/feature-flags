@@ -13,10 +13,10 @@ local isActive = require(Package.isActive)
 ]=]
 export type Flag = {
 	name: string,
-	create: (config: Flags.FlagConfig, retired: boolean?) -> (),
+	create: (config: Flags.PartialFlagConfig?) -> (),
 	exists: () -> boolean,
-	read: () -> Flags.FlagData,
-	update: (config: Flags.FlagConfig) -> (),
+	read: () -> Flags.FlagConfig,
+	update: (config: Flags.PartialFlagConfig) -> (),
 	retire: (retired: boolean?) -> (),
 	destroy: () -> (),
 	isActive: (context: isActive.ActivationContext?, config: isActive.ActivationConfig?) -> boolean,
@@ -42,8 +42,7 @@ export type Flag = {
 
 	See: [create](FeatureFlags#create)
 
-	@param config FlagConfig
-	@param retired? boolean -- Whether this flag is retied
+	@param config PartialFlagConfig
 
 	@error "Flag '%s' already exists." -- Thrown when a flag with this name already exists.
 
@@ -67,7 +66,7 @@ export type Flag = {
 
 	See: [read](FeatureFlags#read)
 
-	@return FlagData
+	@return FlagConfig
 
 	@function read
 	@within Flag
@@ -78,7 +77,7 @@ export type Flag = {
 
 	See: [update](FeatureFlags#update)
 
-	@param config FlagConfig
+	@param config PartialFlagConfig
 
 	@function update
 	@within Flag
@@ -144,19 +143,19 @@ local function createFlag(name: string): Flag
 	return table.freeze({
 		name = name,
 
-		create = function(config: Flags.FlagConfig, retired: boolean?)
-			Flags.create(name, config, retired)
+		create = function(config: Flags.PartialFlagConfig?)
+			Flags.create(name, config)
 		end,
 
 		exists = function(): boolean
 			return Flags.exists(name)
 		end,
 
-		read = function(): Flags.FlagData
+		read = function(): Flags.FlagConfig
 			return Flags.read(name)
 		end,
 
-		update = function(config: Flags.FlagConfig)
+		update = function(config: Flags.PartialFlagConfig)
 			Flags.update(name, config)
 		end,
 

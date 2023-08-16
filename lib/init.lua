@@ -10,7 +10,7 @@ export type ActivationConfig = isActive.ActivationConfig
 export type ActivationContext = isActive.ActivationContext
 export type ChangeRecord = Flags.ChangeRecord
 export type FlagConfig = Flags.FlagConfig
-export type FlagData = Flags.FlagData
+export type PartialFlagConfig = Flags.PartialFlagConfig
 export type RuleSet = Flags.RuleSet
 export type Flag = get.Flag
 

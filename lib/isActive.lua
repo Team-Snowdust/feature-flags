@@ -418,19 +418,12 @@ local function isActive(
 		end
 	end
 
-	local flagConfig = flag.config
-
-	if not flagConfig.active then
+	if not flag.active then
 		return false
 	end
 
-	local mainEvaluation = evaluateRuleSet(context, flagConfig)
-	if mainEvaluation ~= nil then
-		return mainEvaluation
-	end
-
 	local evaluated = false
-	for _, ruleSet in flagConfig.ruleSets or {} do
+	for _, ruleSet in flag.ruleSets do
 		local evaluation = evaluateRuleSet(context, ruleSet)
 		if evaluation then
 			return true

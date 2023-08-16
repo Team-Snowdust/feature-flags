@@ -22,7 +22,7 @@ return function()
 		end)
 
 		it("should resolve to the value of the flag", function()
-			Flags.create("flag", { active = true })
+			Flags.create("flag")
 			promise = get("flag")
 			local flag = promise:now():expect()
 
@@ -30,7 +30,7 @@ return function()
 		end)
 
 		it("should resolve with a flag", function()
-			Flags.create("flag", { active = true })
+			Flags.create("flag")
 			promise = get("flag")
 			local flag = promise:now():expect()
 
@@ -47,7 +47,7 @@ return function()
 		end)
 
 		it("should resolve with a flag that has the correct name", function()
-			Flags.create("flag", { active = true })
+			Flags.create("flag")
 			promise = get("flag")
 			local flag = promise:now():expect()
 
@@ -55,7 +55,7 @@ return function()
 		end)
 
 		it("should resolve with a flag that has the correct active state", function()
-			Flags.create("flag", { active = true })
+			Flags.create("flag")
 			promise = get("flag")
 			local flag = promise:now():expect()
 
@@ -75,7 +75,7 @@ return function()
 
 			expect(resolved).to.equal(false)
 
-			Flags.create("flag", { active = true })
+			Flags.create("flag")
 			resolved = promise:now():await()
 
 			expect(resolved).to.equal(true)
