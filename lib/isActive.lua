@@ -271,10 +271,13 @@ local function evaluateRuleSet(context: ActivationContext, ruleSet: Flags.RuleSe
 
 	-- Check custom activation function
 	if ruleSet.activation then
-		if not ruleSet.activation(context, ruleSet) then
+		local activation = ruleSet.activation(context, ruleSet)
+		if activation == false then
 			return false
 		end
-		matched = true
+		if activation then
+			matched = true
+		end
 	end
 
 	if matched then
