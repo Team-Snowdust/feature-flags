@@ -277,5 +277,19 @@ return function()
 			flag.update({ active = false })
 			expect(changeRecord).to.be.ok()
 		end)
+
+		it("should provide the update options", function()
+			local flag = createFlag("flag")
+			flag.create()
+
+			local updateOptions
+			connection = flag.onChange(function(_, options: Flags.UpdateOptions)
+				updateOptions = options
+			end)
+
+			expect(updateOptions).never.to.be.ok()
+			flag.update({ active = false })
+			expect(updateOptions).to.be.ok()
+		end)
 	end)
 end

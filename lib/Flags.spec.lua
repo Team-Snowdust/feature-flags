@@ -291,5 +291,42 @@ return function()
 			Flags.destroy("flag")
 			expect(new).to.never.be.ok()
 		end)
+
+		it("should provide the update options", function()
+			Flags.create("flag")
+
+			local updateOptions
+			listener = Flags.Changed:Connect(function(_, _, options: Flags.UpdateOptions)
+				updateOptions = options
+			end)
+
+			expect(updateOptions).never.to.be.ok()
+			Flags.update("flag", { active = false })
+			expect(updateOptions).to.be.ok()
+		end)
+
+		it("should provide a false serialization status by default", function()
+			Flags.create("flag")
+
+			local updateOptions
+			listener = Flags.Changed:Connect(function(_, _, options: Flags.UpdateOptions)
+				updateOptions = options
+			end)
+
+			Flags.update("flag", { active = false })
+			expect(updateOptions.serialize).to.equal(false)
+		end)
+
+		it("should provide the serialization status passed", function()
+			Flags.create("flag")
+
+			local updateOptions
+			listener = Flags.Changed:Connect(function(_, _, options: Flags.UpdateOptions)
+				updateOptions = options
+			end)
+
+			Flags.update("flag", { active = false }, { serialize = true })
+			expect(updateOptions.serialize).to.equal(true)
+		end)
 	end)
 end

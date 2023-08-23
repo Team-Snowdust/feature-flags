@@ -20,7 +20,9 @@ export type Flag = {
 	retire: (retired: boolean?) -> (),
 	destroy: () -> (),
 	isActive: (context: isActive.ActivationContext?, config: isActive.ActivationConfig?) -> boolean,
-	onChange: (callback: (record: Flags.ChangeRecord) -> ()) -> Signal.Connection,
+	onChange: (
+		callback: (record: Flags.ChangeRecord, options: Flags.UpdateOptions) -> ()
+	) -> Signal.Connection,
 }
 
 --[=[
@@ -174,12 +176,20 @@ local function createFlag(name: string): Flag
 			return isActive(name, context, config)
 		end,
 
-		onChange = function(callback: (record: Flags.ChangeRecord) -> ()): Signal.Connection
-			return Flags.Changed:Connect(function(changedName: string, record: Flags.ChangeRecord)
-				if changedName == name then
-					callback(record)
+		onChange = function(
+			callback: (record: Flags.ChangeRecord, options: Flags.UpdateOptions) -> ()
+		): Signal.Connection
+			return Flags.Changed:Connect(
+				function(
+					changedName: string,
+					record: Flags.ChangeRecord,
+					options: Flags.UpdateOptions
+				)
+					if changedName == name then
+						callback(record, options)
+					end
 				end
-			end)
+			)
 		end,
 	})
 end

@@ -113,6 +113,36 @@ export type ChangeRecord = {
 }
 
 --[=[
+	Options for updating a flag.
+
+	These are options for how a flag should be updated. Here you can specify
+	whether this change should be serialized. The default is false.
+
+	.serialize boolean -- Whether this change should be serialized
+
+	@interface UpdateOptions
+	@within FeatureFlags
+]=]
+export type UpdateOptions = {
+	serialize: boolean,
+}
+
+--[=[
+	Partial update options.
+
+	This is used to configure a flag update. Any properties that are nil will be
+	given default values.
+
+	.serialize? boolean -- Whether this change should be serialized
+
+	@interface PartialUpdateOptions
+	@within FeatureFlags
+]=]
+export type PartialUpdateOptions = {
+	serialize: boolean?,
+}
+
+--[=[
 	The Flags auxiliary functions.
 
 	@class Flags
@@ -123,14 +153,17 @@ local flags: { [string]: FlagConfig } = {}
 --[=[
 	The flag changed event.
 
-	This fires every time a flag changes. It provides the name and a
-	[ChangeRecord].
+	This fires every time a flag changes. It provides the name, a [ChangeRecord],
+	and [UpdateOptions].
 
 	```lua
-	Changed:Connect(function(name: string, record: ChangeRecord)
+	Changed:Connect(function(name: string, record: ChangeRecord, options: UpdateOptions)
 		print(string.format("Flag '%s' changed.", name))
 		print("Old flag:", record.old)
 		print("New flag:", record.new)
+		if options.serialize then
+			print("This change will be serialized.")
+		end
 	end)
 	```
 
@@ -140,16 +173,32 @@ local flags: { [string]: FlagConfig } = {}
 local Changed = Signal.new()
 
 --[=[
+	Normalizes partial update options.
+
+	@within Flags
+]=]
+local function normalizeUpdateOptions(options: PartialUpdateOptions?): UpdateOptions
+	return {
+		serialize = if options and options.serialize ~= nil then options.serialize else false,
+	}
+end
+
+--[=[
 	Fires a Changed event for a flag.
 
 	@within Flags
 ]=]
-local function fireChange(name: string, old: FlagConfig?, new: FlagConfig?)
+local function fireChange(
+	name: string,
+	old: FlagConfig?,
+	new: FlagConfig?,
+	options: PartialUpdateOptions?
+)
 	local record: ChangeRecord = {
 		old = old,
 		new = new,
 	}
-	Changed:Fire(name, record)
+	Changed:Fire(name, record, normalizeUpdateOptions(options))
 end
 
 --[=[
@@ -202,7 +251,7 @@ end
 
 	@within FeatureFlags
 ]=]
-local function create(name: string, config: PartialFlagConfig?)
+local function create(name: string, config: PartialFlagConfig?, options: PartialUpdateOptions?)
 	if flags[name] then
 		error(string.format("Flag '%s' already exists.", name))
 	end
@@ -210,7 +259,7 @@ local function create(name: string, config: PartialFlagConfig?)
 	local flag = normalizeConfig(config)
 	flags[name] = flag
 
-	fireChange(name, nil, flag)
+	fireChange(name, nil, flag, options)
 end
 
 --[=[
@@ -254,12 +303,12 @@ end
 
 	@within FeatureFlags
 ]=]
-local function update(name: string, config: PartialFlagConfig)
+local function update(name: string, config: PartialFlagConfig, options: PartialUpdateOptions?)
 	local oldFlag = read(name)
 	local newFlag = updateConfig(oldFlag, config)
 	flags[name] = newFlag
 
-	fireChange(name, oldFlag, newFlag)
+	fireChange(name, oldFlag, newFlag, options)
 end
 
 --[=[
@@ -274,13 +323,13 @@ end
 
 	@within FeatureFlags
 ]=]
-local function retire(name: string, retired: boolean?)
+local function retire(name: string, retired: boolean?, options: PartialUpdateOptions?)
 	local retired = if retired ~= nil then retired else true
 	local oldFlag = read(name)
 	local newFlag = updateConfig(oldFlag, { retired = retired })
 	flags[name] = newFlag
 
-	fireChange(name, oldFlag, newFlag)
+	fireChange(name, oldFlag, newFlag, options)
 end
 
 --[=[
@@ -290,11 +339,11 @@ end
 
 	@within FeatureFlags
 ]=]
-local function destroy(name: string)
+local function destroy(name: string, options: PartialUpdateOptions?)
 	local oldFlag = read(name)
 	flags[name] = nil
 
-	fireChange(name, oldFlag)
+	fireChange(name, oldFlag, nil, options)
 end
 
 --[=[
