@@ -30,6 +30,38 @@ local Signal = require(Package.Parent.Signal)
 	})
 	```
 
+	Most rules accept a boolean value for each member. This creates a set of
+	members, but also allows for these to be defined as predicates. Predicates are
+	functions that accept some semantic context and return a boolean value. This
+	allows for more complex contexts to be provided without needing to create
+	specialized logic for each case.
+
+	```lua
+	local userId = 1234567890
+
+	isActive("predicateFlag", {
+		userId = userId,
+		groups = {
+			beta = isBetaMember(userId),
+			campaign = isCampaignMember(userId),
+			criticalGeoRegion = isCriticalGeoRegion(userId),
+		},
+	})
+	```
+
+	:::tip
+	Prefer using predicates over activation functions. Predicates are easier to
+	use and understand. The predicate logic is clear to the developer placing a
+	feature behind a flag, and the predicate logic is clear to the developer
+	configuring the flag.
+
+	Activation functions are less clear and can introduce magic behavior. While
+	the activation function may be clear to the developer configuring the flag, it
+	may not be clear to the developer placing a feature behind a flag, and may
+	even be confusing. Activation functions should be used sparingly and only when
+	predicates are insufficient.
+	:::
+
 	.activation? ((context?: { [unknown]: unknown }, ruleSet?: { [unknown]: unknown }) -> boolean) -- A custom activation function to evaluate
 	.allowedUsers? { [number]: true } -- A set of user IDs that must match
 	.forbiddenUsers? { [number]: true } -- A set of user IDs that may not match
