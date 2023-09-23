@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">FeatureFlags | Feature Flags</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="FeatureFlags | Feature Flags"><link data-rh="true" rel="canonical" href="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags"><link data-rh="true" rel="alternate" href="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags" hreflang="en"><link data-rh="true" rel="alternate" href="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags" hreflang="x-default"><link rel="stylesheet" href="/feature-flags/assets/css/styles.fdfd902f.css">
-<link rel="preload" href="/feature-flags/assets/js/runtime~main.07e470d9.js" as="script">
-<link rel="preload" href="/feature-flags/assets/js/main.2c3f1bfa.js" as="script">
+<link rel="preload" href="/feature-flags/assets/js/runtime~main.a8e1ebfc.js" as="script">
+<link rel="preload" href="/feature-flags/assets/js/main.6f5ee70b.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -227,7 +227,20 @@
 	<span class="token keyword">end</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create"><code style="text-decoration:none">create</code><a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L286"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">create</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="get"><code style="text-decoration:none">get</code><a href="#get" class="hash-link" aria-label="Direct link to get" title="Direct link to get">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/get.lua#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">get</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the flag</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/Flag">Flag</a></code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
+<p>A Promise of the Flag requested</p>
+</span></span></div><div>
+<p>Gets a flag asynchronously.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"newActivity"</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">andThen</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>flag<span class="token punctuation">:</span> Flag<span class="token punctuation">)</span>
+	<span class="token comment">-- The flag is available to use.</span>
+	<span class="token keyword">if</span> flag<span class="token punctuation">.</span><span class="token function">isActive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
+		<span class="token comment">-- The flag is active.</span>
+	<span class="token keyword">end</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create"><code style="text-decoration:none">create</code><a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L286"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">create</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The name to use for the flag</p>
 </span></span></div><div><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The configuration of this flag</p>
@@ -443,21 +456,30 @@
     </div>
   </li>
 </ul>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="get"><code style="text-decoration:none">get</code><a href="#get" class="hash-link" aria-label="Direct link to get" title="Direct link to get">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/get.lua#L28"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">get</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
-<p>The name of the flag</p>
-</span></span></div></div><code>) → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/Flag">Flag</a></code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
-<p>A Promise of the Flag requested</p>
-</span></span></div><div>
-<p>Gets a flag asynchronously.</p>
-<pre class="language-lua"><code class="language-lua"><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"newActivity"</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">andThen</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>flag<span class="token punctuation">:</span> Flag<span class="token punctuation">)</span>
-	<span class="token comment">-- The flag is available to use.</span>
-	<span class="token keyword">if</span> flag<span class="token punctuation">.</span><span class="token function">isActive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
-		<span class="token comment">-- The flag is active.</span>
-	<span class="token keyword">end</span>
-<span class="token keyword">end</span><span class="token punctuation">)</span>
-</code></pre>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
+        {
+            &quot;name&quot;: &quot;get&quot;,
+            &quot;desc&quot;: &quot;Gets a flag asynchronously.\n\n```lua\nget(\&quot;newActivity\&quot;):andThen(function(flag: Flag)\n\t-- The flag is available to use.\n\tif flag.isActive() then\n\t\t-- The flag is active.\n\tend\nend)\n```&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;name&quot;,
+                    &quot;desc&quot;: &quot;The name of the flag&quot;,
+                    &quot;lua_type&quot;: &quot;string&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A Promise of the Flag requested&quot;,
+                    &quot;lua_type&quot;: &quot;Promise&lt;Flag&gt;&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 29,
+                &quot;path&quot;: &quot;lib/get.lua&quot;
+            }
+        },
         {
             &quot;name&quot;: &quot;create&quot;,
             &quot;desc&quot;: &quot;Creates a new flag with the provided name and configuration.\n\n:::note\nThis only needs to be used when introducing new flags, such as when you want\nto introduce a new flag for a feature ahead of time.\n\nThis is typically done through some configuration interface, such as the built\nin one.\n:::\n\n:::tip\nIf updating a flag that already exists, use the `update` function instead.\n:::&quot;,
@@ -682,28 +704,6 @@
             &quot;source&quot;: {
                 &quot;line&quot;: 386,
                 &quot;path&quot;: &quot;lib/isActive.lua&quot;
-            }
-        },
-        {
-            &quot;name&quot;: &quot;get&quot;,
-            &quot;desc&quot;: &quot;Gets a flag asynchronously.\n\n```lua\nget(\&quot;newActivity\&quot;):andThen(function(flag: Flag)\n\t-- The flag is available to use.\n\tif flag.isActive() then\n\t\t-- The flag is active.\n\tend\nend)\n```&quot;,
-            &quot;params&quot;: [
-                {
-                    &quot;name&quot;: &quot;name&quot;,
-                    &quot;desc&quot;: &quot;The name of the flag&quot;,
-                    &quot;lua_type&quot;: &quot;string&quot;
-                }
-            ],
-            &quot;returns&quot;: [
-                {
-                    &quot;desc&quot;: &quot;A Promise of the Flag requested&quot;,
-                    &quot;lua_type&quot;: &quot;Promise&lt;Flag&gt;&quot;
-                }
-            ],
-            &quot;function_type&quot;: &quot;static&quot;,
-            &quot;source&quot;: {
-                &quot;line&quot;: 28,
-                &quot;path&quot;: &quot;lib/get.lua&quot;
             }
         }
     ],
@@ -937,7 +937,7 @@
         &quot;path&quot;: &quot;lib/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#ActivationConfig" class="table-of-contents__link toc-highlight">ActivationConfig</a></li><li><a href="#ActivationContext" class="table-of-contents__link toc-highlight">ActivationContext</a></li><li><a href="#ChangeRecord" class="table-of-contents__link toc-highlight">ChangeRecord</a></li><li><a href="#FlagConfig" class="table-of-contents__link toc-highlight">FlagConfig</a></li><li><a href="#PartialFlagConfig" class="table-of-contents__link toc-highlight">PartialFlagConfig</a></li><li><a href="#PartialUpdateOptions" class="table-of-contents__link toc-highlight">PartialUpdateOptions</a></li><li><a href="#RuleSet" class="table-of-contents__link toc-highlight">RuleSet</a></li><li><a href="#UpdateOptions" class="table-of-contents__link toc-highlight">UpdateOptions</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Changed" class="table-of-contents__link toc-highlight">Changed</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#create" class="table-of-contents__link toc-highlight">.create</a></li><li><a href="#destroy" class="table-of-contents__link toc-highlight">.destroy</a></li><li><a href="#exists" class="table-of-contents__link toc-highlight">.exists</a></li><li><a href="#get" class="table-of-contents__link toc-highlight">.get</a></li><li><a href="#isActive" class="table-of-contents__link toc-highlight">.isActive</a></li><li><a href="#read" class="table-of-contents__link toc-highlight">.read</a></li><li><a href="#reset" class="table-of-contents__link toc-highlight">.reset</a></li><li><a href="#retire" class="table-of-contents__link toc-highlight">.retire</a></li><li><a href="#update" class="table-of-contents__link toc-highlight">.update</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Snowdust LLC. Built with Moonwave and Docusaurus</div></div></div></footer></div>
-<script src="/feature-flags/assets/js/runtime~main.07e470d9.js"></script>
-<script src="/feature-flags/assets/js/main.2c3f1bfa.js"></script>
+<script src="/feature-flags/assets/js/runtime~main.a8e1ebfc.js"></script>
+<script src="/feature-flags/assets/js/main.6f5ee70b.js"></script>
 </body>
 </html>
