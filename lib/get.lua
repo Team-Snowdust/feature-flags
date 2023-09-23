@@ -1,7 +1,8 @@
 local Package = script.Parent
-local Flags = require(Package.Flags)
-local Promise = require(Package.Parent.Promise)
 local PromiseTypes = require(Package.types.Promise)
+
+local Flags = require(Package.Flags)
+local Promise = require(Package.Parent.Promise) :: PromiseTypes.PromiseStatic
 local Signal = require(Package.Parent.Signal)
 local createFlag = require(Package.createFlag)
 
