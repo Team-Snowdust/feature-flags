@@ -1,8 +1,6 @@
 local serializeRepository = require(script.Parent.serializeRepository)
 
 return function()
-	FOCUS()
-
 	it("should not make any changes to an empty repository when given no changes", function()
 		local repository = {}
 
