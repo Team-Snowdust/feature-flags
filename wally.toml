@@ -6,7 +6,20 @@ license = "MIT"
 authors = ["Lucas Gangstad <lucas@lasttalon.dev>"]
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
-exclude = ["*.spec.lua", "*.dev.lua", "tests", "docs"]
+exclude = [
+    "*.spec.lua",
+    "*.dev.lua",
+    "tests",
+    "docs",
+    "aftman.toml",
+    "moonwave.toml",
+    "selene.toml",
+    "stylua.toml",
+    "testez-companion.toml",
+    "sourcemap.json",
+    "test.project.json",
+    "testez.yaml",
+]
 
 [dependencies]
 Promise = "evaera/promise@4.0.0"
