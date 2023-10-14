@@ -1,5 +1,6 @@
 local Flags = require(script.Flags)
 local get = require(script.get)
+local initializeSerialization = require(script.serialization)
 local isActive = require(script.isActive)
 
 --[=[
@@ -15,6 +16,7 @@ export type FlagConfig = Flags.FlagConfig
 export type PartialFlagConfig = Flags.PartialFlagConfig
 export type RuleSet = Flags.RuleSet
 export type Flag = get.Flag
+export type InitializationOptions = initializeSerialization.InitializationOptions
 
 return {
 	create = Flags.create,
@@ -30,7 +32,7 @@ return {
 	get = get,
 	isActive = isActive,
 
-	-- init = init,
+	init = initializeSerialization,
 	-- config = config,
 
 	-- getAllFlags = getAllFlags,
