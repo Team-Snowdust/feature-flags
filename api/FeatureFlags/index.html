@@ -4,12 +4,76 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v2.3.1">
 <title data-rh="true">FeatureFlags | Feature Flags</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="FeatureFlags | Feature Flags"><link data-rh="true" rel="canonical" href="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags"><link data-rh="true" rel="alternate" href="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags" hreflang="en"><link data-rh="true" rel="alternate" href="https://Team-Snowdust.github.io/feature-flags/api/FeatureFlags" hreflang="x-default"><link rel="stylesheet" href="/feature-flags/assets/css/styles.fdfd902f.css">
-<link rel="preload" href="/feature-flags/assets/js/runtime~main.a8e1ebfc.js" as="script">
-<link rel="preload" href="/feature-flags/assets/js/main.6f5ee70b.js" as="script">
+<link rel="preload" href="/feature-flags/assets/js/runtime~main.b8b3bb6f.js" as="script">
+<link rel="preload" href="/feature-flags/assets/js/main.fa38703c.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
-<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/feature-flags/"><b class="navbar__title text--truncate">Feature Flags</b></a><a class="navbar__item navbar__link" href="/feature-flags/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/feature-flags/api/">API</a><a class="navbar__item navbar__link" href="/feature-flags/changelog">Changelog</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Team-Snowdust/feature-flags" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/feature-flags/api/FeatureFlags">​Feature​Flags</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/feature-flags/api/Flag">​Flag</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Feature</span><span style="display:inline-block">Flags</span></h1><div class="luaClassTags_EipM"></div><div></div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RuleSet"><code style="text-decoration:none">RuleSet</code><a href="#RuleSet" class="hash-link" aria-label="Direct link to RuleSet" title="Direct link to RuleSet">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L77"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>RuleSet<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>activation?<!-- -->: </code><code class="purple_ieR2">(</code><code class="green_DgR4">(</code><div class="inset_uKQm"><code>context?<!-- -->: </code><code class="yellow_QJap">{</code><span><code>[</code><code class="blue_P4bS">unknown</code><code>]</code></span><code>: </code><code class="blue_P4bS">unknown</code><code class="yellow_QJap">}</code><code class="green_DgR4">,</code></div><div class="inset_uKQm"><code>ruleSet?<!-- -->: </code><code class="yellow_QJap">{</code><span><code>[</code><code class="blue_P4bS">unknown</code><code>]</code></span><code>: </code><code class="blue_P4bS">unknown</code><code class="yellow_QJap">}</code></div><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="blue_P4bS">boolean</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
+<div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/feature-flags/"><b class="navbar__title text--truncate">Feature Flags</b></a><a class="navbar__item navbar__link" href="/feature-flags/docs/intro">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/feature-flags/api/">API</a><a class="navbar__item navbar__link" href="/feature-flags/changelog">Changelog</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/Team-Snowdust/feature-flags" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="searchBox_ZlJk"><div class="navbar__search"><span aria-label="expand searchbar" role="button" class="search-icon" tabindex="0"></span><input type="search" id="search_input_react" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0 docPageContainer_wNNk"><div class="docPage_Dpn1"><div class="docSidebarContainer_o_re"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/feature-flags/api/FeatureFlags">​Feature​Flags</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/feature-flags/api/Flag">​Flag</a></li></ul></nav></div></div><main class="docMainContainer_HJE1"><div class="container padding-vert--lg"><div class="row"><div class="col docItemCol_MU3C"><div class="docItemContainer_Wv98"><article><div class="member_J0w1 markdown"><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_oUs_"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><header><h1 class="docTitle_mZRt" style="text-decoration:none"><span style="display:inline-block">Feature</span><span style="display:inline-block">Flags</span></h1><div class="luaClassTags_EipM"></div><div></div></header><h2 class="anchor anchorWithStickyNavbar_LWe7" id="types">Types<a href="#types" class="hash-link" aria-label="Direct link to Types" title="Direct link to Types">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ActivationContext"><code style="text-decoration:none">ActivationContext</code><a href="#ActivationContext" class="hash-link" aria-label="Direct link to ActivationContext" title="Direct link to ActivationContext">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/isActive.lua#L45"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ActivationContext<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>userId<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
+<p>The ID of the user</p>
+</span></span></div><div><code>groups<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
+<p>A set of groups</p>
+</span></span></div><div><code>systemStates<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
+<p>A set of system states</p>
+</span></span></div><div><code>abSegments<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
+<p>A set of AB segments</p>
+</span></span></div></div><code>}</code></div><div>
+<p>The ActivationContext for a feature' activation.</p>
+<p>
+  Represents user ID, groups, system states, and AB segments that inform feature
+  activation. These parameters allow features to operate under different rules
+  based on their specific context.
+</p>
+<p>
+  For instance, features may activate for specific user groups, AB segments, or
+  under certain system states.
+</p>
+<p>Default behavior is applied if a context parameter is not provided.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> userContext <span class="token operator">=</span> <span class="token punctuation">{</span>
+	userId <span class="token operator">=</span> <span class="token number">12345</span><span class="token punctuation">,</span> <span class="token comment">-- Replace with actual user ID</span>
+	groups <span class="token operator">=</span> <span class="token punctuation">{</span> betaTesters <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">-- User is in the 'betaTesters' group</span>
+	systemStates <span class="token operator">=</span> <span class="token punctuation">{</span> lowLoad <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">-- System is currently under low load</span>
+	abSegments <span class="token operator">=</span> <span class="token punctuation">{</span> testA <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">-- User is in the 'testA' AB segment</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">if</span> <span class="token function">isActive</span><span class="token punctuation">(</span><span class="token string">"ourFeature"</span><span class="token punctuation">,</span> userContext<span class="token punctuation">)</span> <span class="token keyword">then</span>
+	<span class="token comment">-- Our feature is active for this particular context</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ActivationConfig"><code style="text-decoration:none">ActivationConfig</code><a href="#ActivationConfig" class="hash-link" aria-label="Direct link to ActivationConfig" title="Direct link to ActivationConfig">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/isActive.lua#L81"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ActivationConfig<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>default<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Default activation status if the feature doesn't exist</p>
+</span></span></div><div><code>allowRetire<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Flag to allow retirement of the feature; if not set and the flag is retired, this notifies in the console</p>
+</span></span></div><div><code>warnExists<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Flag to warn rather than error when a feature doesn't exist</p>
+</span></span></div><div><code>warnRetire<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
+<p>Flag to warn rather than error when a feature is retired</p>
+</span></span></div></div><code>}</code></div><div>
+<p>The configuration parameters for a feature's activation.</p>
+<p>
+  This determines the default state and warning behavior of a feature. This can
+  assist with development of features behind flags, such as throwing errors when
+  flags are being used that are no longer meant to be used.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">if</span>
+	<span class="token function">isActive</span><span class="token punctuation">(</span><span class="token string">"newUI"</span><span class="token punctuation">,</span> userContext<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+		default <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment">-- Assume the feature is active if not found (do not notify)</span>
+		allowRetire <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment">-- Notify if the flag has been retired</span>
+		warnRetire <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment">-- Error if the flag is retired</span>
+	<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">then</span>
+	<span class="token comment">-- Load the new user interface</span>
+<span class="token keyword">else</span>
+	<span class="token comment">-- Load the old user interface</span>
+<span class="token keyword">end</span>
+</code></pre>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="InitializationOptions"><code style="text-decoration:none">InitializationOptions</code><a href="#InitializationOptions" class="hash-link" aria-label="Direct link to InitializationOptions" title="Direct link to InitializationOptions">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/serialization/normalize.lua#L10"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>InitializationOptions<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>store?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="https://developer.roblox.com/en-us/api-reference/class/DataStore" target="_blank" rel="noopener noreferrer">DataStore<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound" style="color:gray;vertical-align:middle;margin-left:2px"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the DataStore to use for serialization</p>
+</span></span></div><div><code>synchronizationInterval?<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
+<p>The interval in seconds to synchronize flags</p>
+</span></span></div></div><code>}</code></div><div>
+<p>Options to initialize the serialization process with.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="RuleSet"><code style="text-decoration:none">RuleSet</code><a href="#RuleSet" class="hash-link" aria-label="Direct link to RuleSet" title="Direct link to RuleSet">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L77"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>RuleSet<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>activation?<!-- -->: </code><code class="purple_ieR2">(</code><code class="green_DgR4">(</code><div class="inset_uKQm"><code>context?<!-- -->: </code><code class="yellow_QJap">{</code><span><code>[</code><code class="blue_P4bS">unknown</code><code>]</code></span><code>: </code><code class="blue_P4bS">unknown</code><code class="yellow_QJap">}</code><code class="green_DgR4">,</code></div><div class="inset_uKQm"><code>ruleSet?<!-- -->: </code><code class="yellow_QJap">{</code><span><code>[</code><code class="blue_P4bS">unknown</code><code>]</code></span><code>: </code><code class="blue_P4bS">unknown</code><code class="yellow_QJap">}</code></div><code class="green_DgR4">)</code><code class="green_DgR4"> → </code><code class="blue_P4bS">boolean</code><code class="purple_ieR2">)</code><span class="inlineDescription_G7Er">-- <span>
 <p>A custom activation function to evaluate</p>
 </span></span></div><div><code>allowedUsers?<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">number</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><span class="inlineDescription_G7Er">-- <span>
 <p>A set of user IDs that must match</p>
@@ -154,64 +218,6 @@
   This is used to configure a flag update. Any properties that are nil will be
   given default values.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ActivationContext"><code style="text-decoration:none">ActivationContext</code><a href="#ActivationContext" class="hash-link" aria-label="Direct link to ActivationContext" title="Direct link to ActivationContext">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/isActive.lua#L45"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ActivationContext<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>userId<!-- -->: </code><code class="blue_P4bS">number?</code><span class="inlineDescription_G7Er">-- <span>
-<p>The ID of the user</p>
-</span></span></div><div><code>groups<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
-<p>A set of groups</p>
-</span></span></div><div><code>systemStates<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
-<p>A set of system states</p>
-</span></span></div><div><code>abSegments<!-- -->: </code><code class="purple_ieR2">{</code><span><code>[</code><code class="blue_P4bS">string</code><code>]</code></span><code>: </code><code class="blue_P4bS">true</code><code class="purple_ieR2">}</code><code class="blue_P4bS">?</code><span class="inlineDescription_G7Er">-- <span>
-<p>A set of AB segments</p>
-</span></span></div></div><code>}</code></div><div>
-<p>The ActivationContext for a feature' activation.</p>
-<p>
-  Represents user ID, groups, system states, and AB segments that inform feature
-  activation. These parameters allow features to operate under different rules
-  based on their specific context.
-</p>
-<p>
-  For instance, features may activate for specific user groups, AB segments, or
-  under certain system states.
-</p>
-<p>Default behavior is applied if a context parameter is not provided.</p>
-<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> userContext <span class="token operator">=</span> <span class="token punctuation">{</span>
-	userId <span class="token operator">=</span> <span class="token number">12345</span><span class="token punctuation">,</span> <span class="token comment">-- Replace with actual user ID</span>
-	groups <span class="token operator">=</span> <span class="token punctuation">{</span> betaTesters <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">-- User is in the 'betaTesters' group</span>
-	systemStates <span class="token operator">=</span> <span class="token punctuation">{</span> lowLoad <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">-- System is currently under low load</span>
-	abSegments <span class="token operator">=</span> <span class="token punctuation">{</span> testA <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">-- User is in the 'testA' AB segment</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">if</span> <span class="token function">isActive</span><span class="token punctuation">(</span><span class="token string">"ourFeature"</span><span class="token punctuation">,</span> userContext<span class="token punctuation">)</span> <span class="token keyword">then</span>
-	<span class="token comment">-- Our feature is active for this particular context</span>
-<span class="token keyword">end</span>
-</code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ActivationConfig"><code style="text-decoration:none">ActivationConfig</code><a href="#ActivationConfig" class="hash-link" aria-label="Direct link to ActivationConfig" title="Direct link to ActivationConfig">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/isActive.lua#L81"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code class="purple_ieR2">interface</code> <code>ActivationConfig<!-- --> <!-- -->{</code><div class="inset_uKQm"><div><code>default<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
-<p>Default activation status if the feature doesn't exist</p>
-</span></span></div><div><code>allowRetire<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
-<p>Flag to allow retirement of the feature; if not set and the flag is retired, this notifies in the console</p>
-</span></span></div><div><code>warnExists<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
-<p>Flag to warn rather than error when a feature doesn't exist</p>
-</span></span></div><div><code>warnRetire<!-- -->: </code><code class="blue_P4bS">boolean?</code><span class="inlineDescription_G7Er">-- <span>
-<p>Flag to warn rather than error when a feature is retired</p>
-</span></span></div></div><code>}</code></div><div>
-<p>The configuration parameters for a feature's activation.</p>
-<p>
-  This determines the default state and warning behavior of a feature. This can
-  assist with development of features behind flags, such as throwing errors when
-  flags are being used that are no longer meant to be used.
-</p>
-<pre class="language-lua"><code class="language-lua"><span class="token keyword">if</span>
-	<span class="token function">isActive</span><span class="token punctuation">(</span><span class="token string">"newUI"</span><span class="token punctuation">,</span> userContext<span class="token punctuation">,</span> <span class="token punctuation">{</span>
-		default <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span> <span class="token comment">-- Assume the feature is active if not found (do not notify)</span>
-		allowRetire <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment">-- Notify if the flag has been retired</span>
-		warnRetire <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">,</span> <span class="token comment">-- Error if the flag is retired</span>
-	<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">then</span>
-	<span class="token comment">-- Load the new user interface</span>
-<span class="token keyword">else</span>
-	<span class="token comment">-- Load the old user interface</span>
-<span class="token keyword">end</span>
-</code></pre>
 </div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="properties">Properties<a href="#properties" class="hash-link" aria-label="Direct link to Properties" title="Direct link to Properties">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Changed"><code style="text-decoration:none">Changed</code><a href="#Changed" class="hash-link" aria-label="Direct link to Changed" title="Direct link to Changed">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L205"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.<!-- -->Changed<!-- -->:<!-- --> </code> <code class="blue_P4bS">Event</code></div><div>
 <p>The flag changed event.</p>
 <p>
@@ -227,102 +233,7 @@
 	<span class="token keyword">end</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 </code></pre>
-</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="get"><code style="text-decoration:none">get</code><a href="#get" class="hash-link" aria-label="Direct link to get" title="Direct link to get">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/get.lua#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">get</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
-<p>The name of the flag</p>
-</span></span></div></div><code>) → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/Flag">Flag</a></code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
-<p>A Promise of the Flag requested</p>
-</span></span></div><div>
-<p>Gets a flag asynchronously.</p>
-<pre class="language-lua"><code class="language-lua"><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"newActivity"</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">andThen</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>flag<span class="token punctuation">:</span> Flag<span class="token punctuation">)</span>
-	<span class="token comment">-- The flag is available to use.</span>
-	<span class="token keyword">if</span> flag<span class="token punctuation">.</span><span class="token function">isActive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
-		<span class="token comment">-- The flag is active.</span>
-	<span class="token keyword">end</span>
-<span class="token keyword">end</span><span class="token punctuation">)</span>
-</code></pre>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create"><code style="text-decoration:none">create</code><a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L286"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">create</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
-<p>The name to use for the flag</p>
-</span></span></div><div><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
-<p>The configuration of this flag</p>
-</span></span></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Creates a new flag with the provided name and configuration.</p>
-<div class="admonition admonition-note alert alert--secondary">
-  <div class="admonition-heading">
-    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
-          <path d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path>
-        </svg></span>note</h5>
-  </div>
-  <div class="admonition-content">
-    <p>
-      This only needs to be used when introducing new flags, such as when you want
-      to introduce a new flag for a feature ahead of time.
-    </p>
-    <p>
-      This is typically done through some configuration interface, such as the built
-      in one.
-    </p>
-  </div>
-</div>
-<div class="admonition admonition-tip alert alert--success">
-  <div class="admonition-heading">
-    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
-          <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
-        </svg></span>tip</h5>
-  </div>
-  <div class="admonition-content">
-    <p>If updating a flag that already exists, use the <code>update</code> function instead.</p>
-  </div>
-</div>
-</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; already exists.&quot;</td><td>Thrown when a flag with this name already exists.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="exists"><code style="text-decoration:none">exists</code><a href="#exists" class="hash-link" aria-label="Direct link to exists" title="Direct link to exists">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L302"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">exists</code><code>(</code><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
-<p>Checks if a flag with this name currently exists.</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="read"><code style="text-decoration:none">read</code><a href="#read" class="hash-link" aria-label="Direct link to read" title="Direct link to read">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L323"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">read</code><code>(</code><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#FlagConfig">FlagConfig</a></code></div><div>
-<p>Reads the data of this flag.</p>
-<p>This is primarily useful to display or manipulate flag information.</p>
-<div class="admonition admonition-caution alert alert--warning">
-  <div class="admonition-heading">
-    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
-        </svg></span>caution</h5>
-  </div>
-  <div class="admonition-content">
-    <p>
-      This shouldn't be used to determine flag activation. Use the <code>isActive</code>
-      function instead.
-    </p>
-    <p>
-      While this contains all flag information, it doesn't include any complex
-      activation evaluation logic that <code>isActive</code> does.
-    </p>
-  </div>
-</div>
-</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update"><code style="text-decoration:none">update</code><a href="#update" class="hash-link" aria-label="Direct link to update" title="Direct link to update">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L338"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">update</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig</a></code><code>,</code></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Updates the configuration of this flag.</p>
-</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="retire"><code style="text-decoration:none">retire</code><a href="#retire" class="hash-link" aria-label="Direct link to retire" title="Direct link to retire">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L358"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">retire</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>retired?<!-- -->: </code><code class="blue_P4bS">boolean</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
-<p>The retired status of the flag</p>
-</span></span></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Sets the retired status of a flag.</p>
-<p>
-  If a retired status isn't provided it defaults to true, assuming you intend to
-  retire a flag.
-</p>
-</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="destroy"><code style="text-decoration:none">destroy</code><a href="#destroy" class="hash-link" aria-label="Direct link to destroy" title="Direct link to destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L374"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">destroy</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Removes a flag entirely.</p>
-</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="reset"><code style="text-decoration:none">reset</code><a href="#reset" class="hash-link" aria-label="Direct link to reset" title="Direct link to reset">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L397"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">reset</code><code>(</code><div class="inset_uKQm"><div><code>notify?<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
-<p>Whether to notify listeners of this change</p>
-</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
-<p>Resets all registered flags.</p>
-<p>
-  After this operation, there will be no registered flags and flags will need to
-  be registered again before they can be used. This is primarily used to
-  re-initialize all feature flags.
-</p>
-<p>
-  Notification will inform all listeners about the removal of all flags.
-  Performing no notification is faster, but may break features currently
-  listening. The default is not to notify, assuming that features listening to
-  flags have already been handled or are not currently listening.
-</p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isActive"><code style="text-decoration:none">isActive</code><a href="#isActive" class="hash-link" aria-label="Direct link to isActive" title="Direct link to isActive">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/isActive.lua#L386"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">isActive</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+</div><h2 class="anchor anchorWithStickyNavbar_LWe7" id="functions">Functions<a href="#functions" class="hash-link" aria-label="Direct link to Functions" title="Direct link to Functions">​</a></h2><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="isActive"><code style="text-decoration:none">isActive</code><a href="#isActive" class="hash-link" aria-label="Direct link to isActive" title="Direct link to isActive">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/isActive.lua#L386"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">isActive</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The name of the feature flag to check</p>
 </span></span></div><div><code>context?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#ActivationContext">ActivationContext</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
 <p>The user context for this feature activation</p>
@@ -456,28 +367,216 @@
     </div>
   </li>
 </ul>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="init"><code style="text-decoration:none">init</code><a href="#init" class="hash-link" aria-label="Direct link to init" title="Direct link to init">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/serialization/init.lua#L194"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">init</code><code>(</code><div class="inset_uKQm"><div><code>options?<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#InitializationOptions">InitializationOptions</a></code><span class="inlineDescription_G7Er">-- <span>
+<p>Options to initialize the serialization process</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">Connection</code><span class="inlineDescription_G7Er">-- <span>
+<p>A connection that can be used to disconnect the serialization process</p>
+</span></span></div><div>
+<p>Initializes the serialization process.</p>
+<p>
+  Begins synchronizing flags with the data store. This will listen for local
+  changes to flags that are marked for serialization and update the data store
+  accordingly. Local changes are listened for continuously, but only sent to
+  the data store in specified intervals to help avoid rate limits.
+</p>
+<div class="admonition admonition-info alert alert--info">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path>
+        </svg></span>info</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      This should be started as soon as possible in a game's lifecycle to ensure
+      that flags are synchronized as soon as possible. Any features that depend on
+      serialized flags will be unavailable until this is started and synchronized.
+    </p>
+  </div>
+</div>
+<pre class="language-lua"><code class="language-lua"><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	store <span class="token operator">=</span> <span class="token string">"MyFeatureFlagStore"</span><span class="token punctuation">,</span>
+	synchronizationInterval <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">,</span> <span class="token comment">-- 5 minutes</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>
+  The initial synchronization happens immediately as this is called. This
+  ensures that flags are available as soon as possible. Later synchronizations
+  will happen in the specified interval.
+</p>
+<p>
+  Flag changes can easily be marked for serialization by updating them while
+  passing the <code>serialize</code> option of <a href="/feature-flags/api/FeatureFlags#UpdateOptions">UpdateOptions</a>. This will mark the flag as
+  needing serialization and will be synchronized with the data store during the
+  next synchronization interval.
+</p>
+<pre class="language-lua"><code class="language-lua"><span class="token comment">-- This flag will not be serialized</span>
+<span class="token function">update</span><span class="token punctuation">(</span><span class="token string">"localFlag"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">-- Desired flag changes</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">-- Mark this flag for serialization</span>
+<span class="token function">update</span><span class="token punctuation">(</span><span class="token string">"serializedFlag"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	<span class="token comment">-- Desired flag changes</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+	serialize <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<p>
+  This is a convenience function that takes care of gathering flag changes and
+  synchronizing them with a data store. If you need more control over the
+  serialization process, you can create your own bespoke serialization process
+  instead using the <a href="#Changed">Changed</a> event and the <code>serialize</code> option of
+  <a href="/feature-flags/api/FeatureFlags#UpdateOptions">UpdateOptions</a>.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="create"><code style="text-decoration:none">create</code><a href="#create" class="hash-link" aria-label="Direct link to create" title="Direct link to create">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L286"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">create</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name to use for the flag</p>
+</span></span></div><div><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig?</a></code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The configuration of this flag</p>
+</span></span></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Creates a new flag with the provided name and configuration.</p>
+<div class="admonition admonition-note alert alert--secondary">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16">
+          <path d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path>
+        </svg></span>note</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      This only needs to be used when introducing new flags, such as when you want
+      to introduce a new flag for a feature ahead of time.
+    </p>
+    <p>
+      This is typically done through some configuration interface, such as the built
+      in one.
+    </p>
+  </div>
+</div>
+<div class="admonition admonition-tip alert alert--success">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16">
+          <path d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path>
+        </svg></span>tip</h5>
+  </div>
+  <div class="admonition-content">
+    <p>If updating a flag that already exists, use the <code>update</code> function instead.</p>
+  </div>
+</div>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; already exists.&quot;</td><td>Thrown when a flag with this name already exists.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="exists"><code style="text-decoration:none">exists</code><a href="#exists" class="hash-link" aria-label="Direct link to exists" title="Direct link to exists">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L302"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">exists</code><code>(</code><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
+<p>Checks if a flag with this name currently exists.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="read"><code style="text-decoration:none">read</code><a href="#read" class="hash-link" aria-label="Direct link to read" title="Direct link to read">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L323"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">read</code><code>(</code><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#FlagConfig">FlagConfig</a></code></div><div>
+<p>Reads the data of this flag.</p>
+<p>This is primarily useful to display or manipulate flag information.</p>
+<div class="admonition admonition-caution alert alert--warning">
+  <div class="admonition-heading">
+    <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path>
+        </svg></span>caution</h5>
+  </div>
+  <div class="admonition-content">
+    <p>
+      This shouldn't be used to determine flag activation. Use the <code>isActive</code>
+      function instead.
+    </p>
+    <p>
+      While this contains all flag information, it doesn't include any complex
+      activation evaluation logic that <code>isActive</code> does.
+    </p>
+  </div>
+</div>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="update"><code style="text-decoration:none">update</code><a href="#update" class="hash-link" aria-label="Direct link to update" title="Direct link to update">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L338"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">update</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>config<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialFlagConfig">PartialFlagConfig</a></code><code>,</code></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Updates the configuration of this flag.</p>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="retire"><code style="text-decoration:none">retire</code><a href="#retire" class="hash-link" aria-label="Direct link to retire" title="Direct link to retire">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L358"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">retire</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>retired?<!-- -->: </code><code class="blue_P4bS">boolean</code><code>,</code><span class="inlineDescription_G7Er">-- <span>
+<p>The retired status of the flag</p>
+</span></span></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Sets the retired status of a flag.</p>
+<p>
+  If a retired status isn't provided it defaults to true, assuming you intend to
+  retire a flag.
+</p>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="destroy"><code style="text-decoration:none">destroy</code><a href="#destroy" class="hash-link" aria-label="Direct link to destroy" title="Direct link to destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L374"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">destroy</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>,</code></div><div><code>options<!-- -->: </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/FeatureFlags#PartialUpdateOptions">PartialUpdateOptions?</a></code></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Removes a flag entirely.</p>
+</div><h3>Errors</h3><table class="errorTable_jfN8"><thead><tr><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>&quot;Flag &#x27;%s&#x27; doesn&#x27;t exist.&quot;</td><td>Thrown when a flag with this name doesn&#x27;t exist.</td></tr></tbody></table><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="reset"><code style="text-decoration:none">reset</code><a href="#reset" class="hash-link" aria-label="Direct link to reset" title="Direct link to reset">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/Flags.lua#L397"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">reset</code><code>(</code><div class="inset_uKQm"><div><code>notify?<!-- -->: </code><code class="blue_P4bS">boolean</code><span class="inlineDescription_G7Er">-- <span>
+<p>Whether to notify listeners of this change</p>
+</span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Resets all registered flags.</p>
+<p>
+  After this operation, there will be no registered flags and flags will need to
+  be registered again before they can be used. This is primarily used to
+  re-initialize all feature flags.
+</p>
+<p>
+  Notification will inform all listeners about the removal of all flags.
+  Performing no notification is faster, but may break features currently
+  listening. The default is not to notify, assuming that features listening to
+  flags have already been handled or are not currently listening.
+</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="get"><code style="text-decoration:none">get</code><a href="#get" class="hash-link" aria-label="Direct link to get" title="Direct link to get">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Team-Snowdust/feature-flags/blob/main/lib/get.lua#L29"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>FeatureFlags<!-- -->.</code><code class="green_DgR4">get</code><code>(</code><div class="inset_uKQm"><div><code>name<!-- -->: </code><code class="blue_P4bS">string</code><span class="inlineDescription_G7Er">-- <span>
+<p>The name of the flag</p>
+</span></span></div></div><code>) → </code><code class="blue_P4bS">Promise</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/feature-flags/api/Flag">Flag</a></code><code class="op_lSLc">&gt;</code><span class="inlineDescription_G7Er">-- <span>
+<p>A Promise of the Flag requested</p>
+</span></span></div><div>
+<p>Gets a flag asynchronously.</p>
+<pre class="language-lua"><code class="language-lua"><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"newActivity"</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token function">andThen</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>flag<span class="token punctuation">:</span> Flag<span class="token punctuation">)</span>
+	<span class="token comment">-- The flag is available to use.</span>
+	<span class="token keyword">if</span> flag<span class="token punctuation">.</span><span class="token function">isActive</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
+		<span class="token comment">-- The flag is active.</span>
+	<span class="token keyword">end</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
+</code></pre>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
         {
-            &quot;name&quot;: &quot;get&quot;,
-            &quot;desc&quot;: &quot;Gets a flag asynchronously.\n\n```lua\nget(\&quot;newActivity\&quot;):andThen(function(flag: Flag)\n\t-- The flag is available to use.\n\tif flag.isActive() then\n\t\t-- The flag is active.\n\tend\nend)\n```&quot;,
+            &quot;name&quot;: &quot;isActive&quot;,
+            &quot;desc&quot;: &quot;Checks if a feature flag is active based on provided context and\nconfiguration.\n\nThe `isActive` function evaluates whether a feature should be active based on\nthe provided user context and configuration. It normalizes these inputs, using\ndefault values for any missing context or configuration properties.\n\n```lua\nif isActive(\&quot;uiUpdate\&quot;, {\n\tuserId = 1000,\n\tgroups = { beta = true },\n\tabSegments = { newInventory = true },\n}) then\n\t-- The user with this context should have this feature active.\nend\n```\n\nThe feature flag&#x27;s existence and retirement status are then checked:\n\n- If the feature doesn&#x27;t exist, the behavior depends on the `warnExists` and\n  `default` configuration properties.\n\n  1. If `warnExists` is true, a warning is logged.\n  2. If `default` is provided, the `default` value is returned.\n  3. If neither a warning is logged nor a `default` value is provided, an\n     error is thrown.\n  4. If nothing else causes the function to terminate a default value of false\n     is returned.\n\n  ```lua\n  if isActive(\&quot;missingFlag\&quot;, activationContext, {\n  \tdefault = true,\n  \twarnExists = true,\n  }) then\n  \t-- If the flag no longer exists we still execute this code.\n  \t-- A warning is logged rather than an error.\n  else\n  \t-- The flag exists, but is set to false.\n  end\n  ```\n\n- If the feature is retired, the behavior depends on the `allowRetire` and\n  `warnRetire` configuration properties.\n\n  1. If `allowRetire` is false, an error is thrown.\n  2. If `allowRetire` is true but `warnRetire` is true as well, a warning is\n     logged.\n\n  ```lua\n  if isActive(\&quot;oldFlag\&quot;, activationContext, {\n  \tallowRetire = true,\n  \twarnRetire = true,\n  }) then\n  \t-- A retired flag can still be checked, but a warning is logged.\n  end\n  ```\n\nThe flag&#x27;s active status is then checked. If the flag isn&#x27;t active, then false\nis returned immediately.\n\n:::info\nAn inactive flag indicates it should not be active for anyone or under any\ncircumstances. To activate a feature conditionally rule sets should be used.\n:::\n\nIf the flag is active, each rule set in the feature flag&#x27;s configuration is\nevaluated using the provided context:\n\n- If a rule set evaluates to true, the feature is active.\n- If no rule set evaluates to true, but at least one rule set was evaluated\n  (i.e., it matched the context even though it evaluated to false), the\n  feature is not active.\n- If no rule set matches the context (i.e., none of the rule sets were\n  evaluated), this means that no rules apply to disable a feature for the\n  provided context. The feature is considered active.\n\n\t:::caution\n  This is sometimes unintuitive for users unfamiliar with it.\n\n  Consider the case where a rule set to activate a feature for a specific user\n  ID is configured but the feature is being activated without a user context,\n  such as on the server. In such a case, the user restriction should not be\n  considered matching and the feature should be considered active if no other\n  rules apply.\n\t:::&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;name&quot;,
-                    &quot;desc&quot;: &quot;The name of the flag&quot;,
+                    &quot;desc&quot;: &quot;The name of the feature flag to check&quot;,
                     &quot;lua_type&quot;: &quot;string&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;context?&quot;,
+                    &quot;desc&quot;: &quot;The user context for this feature activation&quot;,
+                    &quot;lua_type&quot;: &quot;ActivationContext&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;config?&quot;,
+                    &quot;desc&quot;: &quot;The configuration parameters for this feature activation&quot;,
+                    &quot;lua_type&quot;: &quot;ActivationConfig&quot;
                 }
             ],
             &quot;returns&quot;: [
                 {
-                    &quot;desc&quot;: &quot;A Promise of the Flag requested&quot;,
-                    &quot;lua_type&quot;: &quot;Promise&lt;Flag&gt;&quot;
+                    &quot;desc&quot;: &quot;Whether the feature should be active&quot;,
+                    &quot;lua_type&quot;: &quot;boolean&quot;
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 29,
-                &quot;path&quot;: &quot;lib/get.lua&quot;
+                &quot;line&quot;: 386,
+                &quot;path&quot;: &quot;lib/isActive.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;init&quot;,
+            &quot;desc&quot;: &quot;Initializes the serialization process.\n\nBegins synchronizing flags with the data store. This will listen for local\nchanges to flags that are marked for serialization and update the data store\naccordingly. Local changes are listened for continuously, but only sent to\nthe data store in specified intervals to help avoid rate limits.\n\n:::info\nThis should be started as soon as possible in a game&#x27;s lifecycle to ensure\nthat flags are synchronized as soon as possible. Any features that depend on\nserialized flags will be unavailable until this is started and synchronized.\n:::\n\n```lua\ninit({\n\tstore = \&quot;MyFeatureFlagStore\&quot;,\n\tsynchronizationInterval = 300, -- 5 minutes\n})\n```\n\nThe initial synchronization happens immediately as this is called. This\nensures that flags are available as soon as possible. Later synchronizations\nwill happen in the specified interval.\n\nFlag changes can easily be marked for serialization by updating them while\npassing the `serialize` option of [UpdateOptions]. This will mark the flag as\nneeding serialization and will be synchronized with the data store during the\nnext synchronization interval.\n\n```lua\n-- This flag will not be serialized\nupdate(\&quot;localFlag\&quot;, {\n\t-- Desired flag changes\n})\n\n-- Mark this flag for serialization\nupdate(\&quot;serializedFlag\&quot;, {\n\t-- Desired flag changes\n}, {\n\tserialize = true,\n})\n```\n\nThis is a convenience function that takes care of gathering flag changes and\nsynchronizing them with a data store. If you need more control over the\nserialization process, you can create your own bespoke serialization process\ninstead using the [Changed](#Changed) event and the `serialize` option of\n[UpdateOptions].&quot;,
+            &quot;params&quot;: [
+                {
+                    &quot;name&quot;: &quot;options?&quot;,
+                    &quot;desc&quot;: &quot;Options to initialize the serialization process&quot;,
+                    &quot;lua_type&quot;: &quot;InitializationOptions&quot;
+                }
+            ],
+            &quot;returns&quot;: [
+                {
+                    &quot;desc&quot;: &quot;A connection that can be used to disconnect the serialization process&quot;,
+                    &quot;lua_type&quot;: &quot;Connection&quot;
+                }
+            ],
+            &quot;function_type&quot;: &quot;static&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 194,
+                &quot;path&quot;: &quot;lib/serialization/init.lua&quot;
             }
         },
         {
@@ -675,35 +774,25 @@
             }
         },
         {
-            &quot;name&quot;: &quot;isActive&quot;,
-            &quot;desc&quot;: &quot;Checks if a feature flag is active based on provided context and\nconfiguration.\n\nThe `isActive` function evaluates whether a feature should be active based on\nthe provided user context and configuration. It normalizes these inputs, using\ndefault values for any missing context or configuration properties.\n\n```lua\nif isActive(\&quot;uiUpdate\&quot;, {\n\tuserId = 1000,\n\tgroups = { beta = true },\n\tabSegments = { newInventory = true },\n}) then\n\t-- The user with this context should have this feature active.\nend\n```\n\nThe feature flag&#x27;s existence and retirement status are then checked:\n\n- If the feature doesn&#x27;t exist, the behavior depends on the `warnExists` and\n  `default` configuration properties.\n\n  1. If `warnExists` is true, a warning is logged.\n  2. If `default` is provided, the `default` value is returned.\n  3. If neither a warning is logged nor a `default` value is provided, an\n     error is thrown.\n  4. If nothing else causes the function to terminate a default value of false\n     is returned.\n\n  ```lua\n  if isActive(\&quot;missingFlag\&quot;, activationContext, {\n  \tdefault = true,\n  \twarnExists = true,\n  }) then\n  \t-- If the flag no longer exists we still execute this code.\n  \t-- A warning is logged rather than an error.\n  else\n  \t-- The flag exists, but is set to false.\n  end\n  ```\n\n- If the feature is retired, the behavior depends on the `allowRetire` and\n  `warnRetire` configuration properties.\n\n  1. If `allowRetire` is false, an error is thrown.\n  2. If `allowRetire` is true but `warnRetire` is true as well, a warning is\n     logged.\n\n  ```lua\n  if isActive(\&quot;oldFlag\&quot;, activationContext, {\n  \tallowRetire = true,\n  \twarnRetire = true,\n  }) then\n  \t-- A retired flag can still be checked, but a warning is logged.\n  end\n  ```\n\nThe flag&#x27;s active status is then checked. If the flag isn&#x27;t active, then false\nis returned immediately.\n\n:::info\nAn inactive flag indicates it should not be active for anyone or under any\ncircumstances. To activate a feature conditionally rule sets should be used.\n:::\n\nIf the flag is active, each rule set in the feature flag&#x27;s configuration is\nevaluated using the provided context:\n\n- If a rule set evaluates to true, the feature is active.\n- If no rule set evaluates to true, but at least one rule set was evaluated\n  (i.e., it matched the context even though it evaluated to false), the\n  feature is not active.\n- If no rule set matches the context (i.e., none of the rule sets were\n  evaluated), this means that no rules apply to disable a feature for the\n  provided context. The feature is considered active.\n\n\t:::caution\n  This is sometimes unintuitive for users unfamiliar with it.\n\n  Consider the case where a rule set to activate a feature for a specific user\n  ID is configured but the feature is being activated without a user context,\n  such as on the server. In such a case, the user restriction should not be\n  considered matching and the feature should be considered active if no other\n  rules apply.\n\t:::&quot;,
+            &quot;name&quot;: &quot;get&quot;,
+            &quot;desc&quot;: &quot;Gets a flag asynchronously.\n\n```lua\nget(\&quot;newActivity\&quot;):andThen(function(flag: Flag)\n\t-- The flag is available to use.\n\tif flag.isActive() then\n\t\t-- The flag is active.\n\tend\nend)\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;name&quot;,
-                    &quot;desc&quot;: &quot;The name of the feature flag to check&quot;,
+                    &quot;desc&quot;: &quot;The name of the flag&quot;,
                     &quot;lua_type&quot;: &quot;string&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;context?&quot;,
-                    &quot;desc&quot;: &quot;The user context for this feature activation&quot;,
-                    &quot;lua_type&quot;: &quot;ActivationContext&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;config?&quot;,
-                    &quot;desc&quot;: &quot;The configuration parameters for this feature activation&quot;,
-                    &quot;lua_type&quot;: &quot;ActivationConfig&quot;
                 }
             ],
             &quot;returns&quot;: [
                 {
-                    &quot;desc&quot;: &quot;Whether the feature should be active&quot;,
-                    &quot;lua_type&quot;: &quot;boolean&quot;
+                    &quot;desc&quot;: &quot;A Promise of the Flag requested&quot;,
+                    &quot;lua_type&quot;: &quot;Promise&lt;Flag&gt;&quot;
                 }
             ],
             &quot;function_type&quot;: &quot;static&quot;,
             &quot;source&quot;: {
-                &quot;line&quot;: 386,
-                &quot;path&quot;: &quot;lib/isActive.lua&quot;
+                &quot;line&quot;: 29,
+                &quot;path&quot;: &quot;lib/get.lua&quot;
             }
         }
     ],
@@ -719,6 +808,86 @@
         }
     ],
     &quot;types&quot;: [
+        {
+            &quot;name&quot;: &quot;ActivationContext&quot;,
+            &quot;desc&quot;: &quot;The ActivationContext for a feature&#x27; activation.\n\nRepresents user ID, groups, system states, and AB segments that inform feature\nactivation. These parameters allow features to operate under different rules\nbased on their specific context.\n\nFor instance, features may activate for specific user groups, AB segments, or\nunder certain system states.\n\nDefault behavior is applied if a context parameter is not provided.\n\n```lua\nlocal userContext = {\n\tuserId = 12345, -- Replace with actual user ID\n\tgroups = { betaTesters = true }, -- User is in the &#x27;betaTesters&#x27; group\n\tsystemStates = { lowLoad = true }, -- System is currently under low load\n\tabSegments = { testA = true }, -- User is in the &#x27;testA&#x27; AB segment\n}\n\nif isActive(\&quot;ourFeature\&quot;, userContext) then\n\t-- Our feature is active for this particular context\nend\n```&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;userId&quot;,
+                    &quot;lua_type&quot;: &quot;number?&quot;,
+                    &quot;desc&quot;: &quot;The ID of the user&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;groups&quot;,
+                    &quot;lua_type&quot;: &quot;{ [string]: true }?&quot;,
+                    &quot;desc&quot;: &quot;A set of groups&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;systemStates&quot;,
+                    &quot;lua_type&quot;: &quot;{ [string]: true }?&quot;,
+                    &quot;desc&quot;: &quot;A set of system states&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;abSegments&quot;,
+                    &quot;lua_type&quot;: &quot;{ [string]: true }?&quot;,
+                    &quot;desc&quot;: &quot;A set of AB segments&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 45,
+                &quot;path&quot;: &quot;lib/isActive.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;ActivationConfig&quot;,
+            &quot;desc&quot;: &quot;The configuration parameters for a feature&#x27;s activation.\n\nThis determines the default state and warning behavior of a feature. This can\nassist with development of features behind flags, such as throwing errors when\nflags are being used that are no longer meant to be used.\n\n```lua\nif\n\tisActive(\&quot;newUI\&quot;, userContext, {\n\t\tdefault = true, -- Assume the feature is active if not found (do not notify)\n\t\tallowRetire = false, -- Notify if the flag has been retired\n\t\twarnRetire = false, -- Error if the flag is retired\n\t})\nthen\n\t-- Load the new user interface\nelse\n\t-- Load the old user interface\nend\n```&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;default&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Default activation status if the feature doesn&#x27;t exist&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;allowRetire&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Flag to allow retirement of the feature; if not set and the flag is retired, this notifies in the console&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;warnExists&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Flag to warn rather than error when a feature doesn&#x27;t exist&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;warnRetire&quot;,
+                    &quot;lua_type&quot;: &quot;boolean?&quot;,
+                    &quot;desc&quot;: &quot;Flag to warn rather than error when a feature is retired&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 81,
+                &quot;path&quot;: &quot;lib/isActive.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;InitializationOptions&quot;,
+            &quot;desc&quot;: &quot;Options to initialize the serialization process with.&quot;,
+            &quot;fields&quot;: [
+                {
+                    &quot;name&quot;: &quot;store?&quot;,
+                    &quot;lua_type&quot;: &quot;DataStore&quot;,
+                    &quot;desc&quot;: &quot;The name of the DataStore to use for serialization&quot;
+                },
+                {
+                    &quot;name&quot;: &quot;synchronizationInterval?&quot;,
+                    &quot;lua_type&quot;: &quot;number&quot;,
+                    &quot;desc&quot;: &quot;The interval in seconds to synchronize flags&quot;
+                }
+            ],
+            &quot;source&quot;: {
+                &quot;line&quot;: 10,
+                &quot;path&quot;: &quot;lib/serialization/normalize.lua&quot;
+            }
+        },
         {
             &quot;name&quot;: &quot;RuleSet&quot;,
             &quot;desc&quot;: &quot;A rule set to determine if a feature should be active for a given context.\n\nWhen a rule set is evaluated against a context, all parts of the rule set must\nbe true for this rule set to pass. If no rule sets match then this rule set\nwill not apply. See [isActive](#isActive) for a more detailed explanation.\n\nAB testing segments are provided as a map of segment names to segment\nproportions. All testing segment proportions are added together when selecting\na segment to determine the total proportion rather than using a percentage.\nThis enables more specific and configurable group proportions than strict\npercentages may allow.\n\n```lua\ncreate(\&quot;abTestFlag\&quot;, {\n\tactive: true,\n\truleSets: {\n\t\t{ -- Our AB testing rule set\n\t\t\tabSegments = {\n\t\t\t\t-- Our total proportion is 8, so we&#x27;re selecting out of 8 total.\n\t\t\t\tsegment1 = 5, -- This segment accounts for 5/8ths of the population.\n\t\t\t\tsegment2 = 2, -- This segment accounts for 2/8ths, or 1/4th.\n\t\t\t\tsegment3 = 1, -- This segment accounts for 1/8th.\n\t\t\t},\n\t\t},\n\t},\n})\n```\n\nMost rules accept a boolean value for each member. This creates a set of\nmembers, but also allows for these to be defined as predicates. Predicates are\nfunctions that accept some semantic context and return a boolean value. This\nallows for more complex contexts to be provided without needing to create\nspecialized logic for each case.\n\n```lua\nlocal userId = 1234567890\n\nisActive(\&quot;predicateFlag\&quot;, {\n\tuserId = userId,\n\tgroups = {\n\t\tbeta = isBetaMember(userId),\n\t\tcampaign = isCampaignMember(userId),\n\t\tcriticalGeoRegion = isCriticalGeoRegion(userId),\n\t},\n})\n```\n\n:::tip\nPrefer using predicates over activation functions. Predicates are easier to\nuse and understand. The predicate logic is clear to the developer placing a\nfeature behind a flag, and the predicate logic is clear to the developer\nconfiguring the flag.\n\nActivation functions are less clear and can introduce magic behavior. While\nthe activation function may be clear to the developer configuring the flag, it\nmay not be clear to the developer placing a feature behind a flag, and may\neven be confusing. Activation functions should be used sparingly and only when\npredicates are insufficient.\n:::&quot;,
@@ -868,76 +1037,16 @@
                 &quot;line&quot;: 173,
                 &quot;path&quot;: &quot;lib/Flags.lua&quot;
             }
-        },
-        {
-            &quot;name&quot;: &quot;ActivationContext&quot;,
-            &quot;desc&quot;: &quot;The ActivationContext for a feature&#x27; activation.\n\nRepresents user ID, groups, system states, and AB segments that inform feature\nactivation. These parameters allow features to operate under different rules\nbased on their specific context.\n\nFor instance, features may activate for specific user groups, AB segments, or\nunder certain system states.\n\nDefault behavior is applied if a context parameter is not provided.\n\n```lua\nlocal userContext = {\n\tuserId = 12345, -- Replace with actual user ID\n\tgroups = { betaTesters = true }, -- User is in the &#x27;betaTesters&#x27; group\n\tsystemStates = { lowLoad = true }, -- System is currently under low load\n\tabSegments = { testA = true }, -- User is in the &#x27;testA&#x27; AB segment\n}\n\nif isActive(\&quot;ourFeature\&quot;, userContext) then\n\t-- Our feature is active for this particular context\nend\n```&quot;,
-            &quot;fields&quot;: [
-                {
-                    &quot;name&quot;: &quot;userId&quot;,
-                    &quot;lua_type&quot;: &quot;number?&quot;,
-                    &quot;desc&quot;: &quot;The ID of the user&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;groups&quot;,
-                    &quot;lua_type&quot;: &quot;{ [string]: true }?&quot;,
-                    &quot;desc&quot;: &quot;A set of groups&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;systemStates&quot;,
-                    &quot;lua_type&quot;: &quot;{ [string]: true }?&quot;,
-                    &quot;desc&quot;: &quot;A set of system states&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;abSegments&quot;,
-                    &quot;lua_type&quot;: &quot;{ [string]: true }?&quot;,
-                    &quot;desc&quot;: &quot;A set of AB segments&quot;
-                }
-            ],
-            &quot;source&quot;: {
-                &quot;line&quot;: 45,
-                &quot;path&quot;: &quot;lib/isActive.lua&quot;
-            }
-        },
-        {
-            &quot;name&quot;: &quot;ActivationConfig&quot;,
-            &quot;desc&quot;: &quot;The configuration parameters for a feature&#x27;s activation.\n\nThis determines the default state and warning behavior of a feature. This can\nassist with development of features behind flags, such as throwing errors when\nflags are being used that are no longer meant to be used.\n\n```lua\nif\n\tisActive(\&quot;newUI\&quot;, userContext, {\n\t\tdefault = true, -- Assume the feature is active if not found (do not notify)\n\t\tallowRetire = false, -- Notify if the flag has been retired\n\t\twarnRetire = false, -- Error if the flag is retired\n\t})\nthen\n\t-- Load the new user interface\nelse\n\t-- Load the old user interface\nend\n```&quot;,
-            &quot;fields&quot;: [
-                {
-                    &quot;name&quot;: &quot;default&quot;,
-                    &quot;lua_type&quot;: &quot;boolean?&quot;,
-                    &quot;desc&quot;: &quot;Default activation status if the feature doesn&#x27;t exist&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;allowRetire&quot;,
-                    &quot;lua_type&quot;: &quot;boolean?&quot;,
-                    &quot;desc&quot;: &quot;Flag to allow retirement of the feature; if not set and the flag is retired, this notifies in the console&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;warnExists&quot;,
-                    &quot;lua_type&quot;: &quot;boolean?&quot;,
-                    &quot;desc&quot;: &quot;Flag to warn rather than error when a feature doesn&#x27;t exist&quot;
-                },
-                {
-                    &quot;name&quot;: &quot;warnRetire&quot;,
-                    &quot;lua_type&quot;: &quot;boolean?&quot;,
-                    &quot;desc&quot;: &quot;Flag to warn rather than error when a feature is retired&quot;
-                }
-            ],
-            &quot;source&quot;: {
-                &quot;line&quot;: 81,
-                &quot;path&quot;: &quot;lib/isActive.lua&quot;
-            }
         }
     ],
     &quot;name&quot;: &quot;FeatureFlags&quot;,
     &quot;desc&quot;: &quot;&quot;,
     &quot;source&quot;: {
-        &quot;line&quot;: 8,
+        &quot;line&quot;: 9,
         &quot;path&quot;: &quot;lib/init.lua&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#ActivationConfig" class="table-of-contents__link toc-highlight">ActivationConfig</a></li><li><a href="#ActivationContext" class="table-of-contents__link toc-highlight">ActivationContext</a></li><li><a href="#ChangeRecord" class="table-of-contents__link toc-highlight">ChangeRecord</a></li><li><a href="#FlagConfig" class="table-of-contents__link toc-highlight">FlagConfig</a></li><li><a href="#PartialFlagConfig" class="table-of-contents__link toc-highlight">PartialFlagConfig</a></li><li><a href="#PartialUpdateOptions" class="table-of-contents__link toc-highlight">PartialUpdateOptions</a></li><li><a href="#RuleSet" class="table-of-contents__link toc-highlight">RuleSet</a></li><li><a href="#UpdateOptions" class="table-of-contents__link toc-highlight">UpdateOptions</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Changed" class="table-of-contents__link toc-highlight">Changed</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#create" class="table-of-contents__link toc-highlight">.create</a></li><li><a href="#destroy" class="table-of-contents__link toc-highlight">.destroy</a></li><li><a href="#exists" class="table-of-contents__link toc-highlight">.exists</a></li><li><a href="#get" class="table-of-contents__link toc-highlight">.get</a></li><li><a href="#isActive" class="table-of-contents__link toc-highlight">.isActive</a></li><li><a href="#read" class="table-of-contents__link toc-highlight">.read</a></li><li><a href="#reset" class="table-of-contents__link toc-highlight">.reset</a></li><li><a href="#retire" class="table-of-contents__link toc-highlight">.retire</a></li><li><a href="#update" class="table-of-contents__link toc-highlight">.update</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Snowdust LLC. Built with Moonwave and Docusaurus</div></div></div></footer></div>
-<script src="/feature-flags/assets/js/runtime~main.a8e1ebfc.js"></script>
-<script src="/feature-flags/assets/js/main.6f5ee70b.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#ActivationConfig" class="table-of-contents__link toc-highlight">ActivationConfig</a></li><li><a href="#ActivationContext" class="table-of-contents__link toc-highlight">ActivationContext</a></li><li><a href="#ChangeRecord" class="table-of-contents__link toc-highlight">ChangeRecord</a></li><li><a href="#FlagConfig" class="table-of-contents__link toc-highlight">FlagConfig</a></li><li><a href="#InitializationOptions" class="table-of-contents__link toc-highlight">InitializationOptions</a></li><li><a href="#PartialFlagConfig" class="table-of-contents__link toc-highlight">PartialFlagConfig</a></li><li><a href="#PartialUpdateOptions" class="table-of-contents__link toc-highlight">PartialUpdateOptions</a></li><li><a href="#RuleSet" class="table-of-contents__link toc-highlight">RuleSet</a></li><li><a href="#UpdateOptions" class="table-of-contents__link toc-highlight">UpdateOptions</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Changed" class="table-of-contents__link toc-highlight">Changed</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#create" class="table-of-contents__link toc-highlight">.create</a></li><li><a href="#destroy" class="table-of-contents__link toc-highlight">.destroy</a></li><li><a href="#exists" class="table-of-contents__link toc-highlight">.exists</a></li><li><a href="#get" class="table-of-contents__link toc-highlight">.get</a></li><li><a href="#init" class="table-of-contents__link toc-highlight">.init</a></li><li><a href="#isActive" class="table-of-contents__link toc-highlight">.isActive</a></li><li><a href="#read" class="table-of-contents__link toc-highlight">.read</a></li><li><a href="#reset" class="table-of-contents__link toc-highlight">.reset</a></li><li><a href="#retire" class="table-of-contents__link toc-highlight">.retire</a></li><li><a href="#update" class="table-of-contents__link toc-highlight">.update</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Snowdust LLC. Built with Moonwave and Docusaurus</div></div></div></footer></div>
+<script src="/feature-flags/assets/js/runtime~main.b8b3bb6f.js"></script>
+<script src="/feature-flags/assets/js/main.fa38703c.js"></script>
 </body>
 </html>
