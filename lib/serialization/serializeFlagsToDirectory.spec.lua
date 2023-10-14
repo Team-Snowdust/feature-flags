@@ -1,8 +1,6 @@
 local serializeFlagsToDirectory = require(script.Parent.serializeFlagsToDirectory)
 
 return function()
-	FOCUS()
-
 	describe("Changes", function()
 		it("should make no changes when there are no flag changes", function()
 			local oldDirectory = {
