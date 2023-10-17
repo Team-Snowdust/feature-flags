@@ -3,10 +3,22 @@ classOrder = ["FeatureFlags"]
 
 [docusaurus]
 title = "Feature Flags"
-tagline = "A feature flags library"
+tagline = "Manage features with ease"
 
 [home]
 enabled = true
+
+[[home.features]]
+title = "Toggle Features On-the-Fly"
+description = "Respond to changing needs swiftly by enabling or disabling features without redeploying code. Make iterations and experiments a breeze."
+
+[[home.features]]
+title = "User-Centric Releases"
+description = "Target specific user segments with tailored experiences. Easily cater to different user groups, regions, or any other criteria, optimizing user engagement and satisfaction."
+
+[[home.features]]
+title = "Risk-Free Deployments"
+description = "Introduce new features with confidence. Test in production without affecting all users, and roll back instantly if needed."
 
 [footer]
 copyright = "Copyright © 2023 Snowdust LLC. Built with Moonwave and Docusaurus"
